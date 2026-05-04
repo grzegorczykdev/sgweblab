@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -13,6 +13,11 @@ const Footer = () => {
       label: "LinkedIn",
     },
     { icon: Mail, href: "mailto:hello@sgweblab.com", label: "Email" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/sgweblab_com/",
+      label: "Instagram",
+    },
   ];
 
   return (
