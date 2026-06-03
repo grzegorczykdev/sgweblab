@@ -28,6 +28,66 @@ export const translations: Translations = {
   "nav.menu.close": { en: "Close menu", pl: "Zamknij menu" },
 
   // Portfolio
+  "portfolio.intro.title": {
+    en: "Hi, I'm Sylwia",
+    pl: "Cześć, jestem Sylwia",
+  },
+  "portfolio.intro.lead": {
+    en: "I am a tech and software development enthusiast driven by a desire to build solutions that truly matter, solve real needs, and deliver measurable business impact.",
+    pl: "Jestem pasjonatką technologii i software developmentu. Tworzę rozwiązania, które mają prawdziwe znaczenie, są potrzebne i przynoszą mierzalne efekty biznesowe.",
+  },
+  "portfolio.intro.bio": {
+    en: "As a Full Stack & AI Engineer with over 5 years of experience, I specialize in architecting resilient enterprise applications and deploying production-ready AI pipelines. I bridge the gap between complex backend systems and cutting-edge LLM capabilities, operating with an AI-First Mindset.",
+    pl: "Jako Full Stack & AI Engineer z ponad 5-letnim doświadczeniem, specjalizuję się w projektowaniu odpornych architektur enterprise oraz wdrażaniu produkcyjnych potoków sztucznej inteligencji. Łączę świat złożonych systemów backendowych z nowoczesnymi możliwościami LLM.",
+  },
+  "portfolio.intro.expertiseHeading": {
+    en: "Core Expertise",
+    pl: "Czym się zajmuję?",
+  },
+  "portfolio.intro.expertise.ai.title": {
+    en: "AI & LLM Engineering",
+    pl: "AI & LLM Engineering",
+  },
+  "portfolio.intro.expertise.ai.body": {
+    en: "Designing advanced, multi-stage AI pipelines and RAG architectures (pgvector, Pinecone, LangChain) to power intelligent automation and multi-modal analysis.",
+    pl: "Projektuję zaawansowane, wieloetapowe potoki AI i architektury RAG (pgvector, Pinecone, LangChain). Wdrażam systemy automatyzacji i zaawansowanej analizy danych.",
+  },
+  "portfolio.intro.expertise.enterprise.title": {
+    en: "Enterprise-Grade Engineering",
+    pl: "Architektura Enterprise",
+  },
+  "portfolio.intro.expertise.enterprise.body": {
+    en: "Building robust backend and frontend systems (PHP/Laravel/Symfony, C#/.NET, Python/FastAPI, React/Next.js) anchored in Clean Code principles and ironclad security.",
+    pl: "Buduję stabilny backend i frontend (PHP/Laravel/Symfony, C#/.NET, Python/FastAPI, React/Next.js) w oparciu o zasady Clean Code i bezpieczną autoryzację.",
+  },
+  "portfolio.intro.expertise.products.title": {
+    en: "Performance & Digital Products",
+    pl: "Wydajność i Produkty Cyfrowe",
+  },
+  "portfolio.intro.expertise.products.body": {
+    en: "Through SGWebLab, I help businesses turn technology into revenue. I deliver high-performance, SEO-optimized digital products and AI automations built to scale from day one.",
+    pl: "W ramach SGWebLab pomagam markom przekuwać technologię w zysk. Tworzę szybkie, zoptymalizowane pod kątem konwersji i SEO aplikacje oraz automatyzacje AI, które skalują się od pierwszego dnia.",
+  },
+  "portfolio.intro.expertise.remote.title": {
+    en: "Async & Remote-First",
+    pl: "Async & Remote Expert",
+  },
+  "portfolio.intro.expertise.remote.body": {
+    en: "Expert in navigating global timezones within distributed teams, relying on high-impact asynchronous communication to keep projects moving forward seamlessly.",
+    pl: "Mam doświadczenie w pracy dla międzynarodowych, rozproszonych zespołów. Stawiam na wysoką kulturę komunikacji asynchronicznej.",
+  },
+  "portfolio.intro.closing": {
+    en: "Whether you are looking to recruit a specialist for a demanding AI initiative or seeking a technical partner to build a high-performance digital product for your business - take a look at my projects below or download my CV and let's connect!",
+    pl: "Niezależnie od tego, czy rekrutujesz do wymagającego projektu AI, czy szukasz partnera do zbudowania zaawansowanego produktu technologicznego dla Twojej firmy - zapraszam do zapoznania się z moimi projektami poniżej lub pobrania mojego CV!",
+  },
+  "portfolio.intro.cta": {
+    en: "Explore my work",
+    pl: "Zobacz moje realizacje",
+  },
+  "portfolio.intro.downloadCv": {
+    en: "Download CV (PDF)",
+    pl: "Pobierz CV (PDF)",
+  },
   "portfolio.title": { en: "Selected projects", pl: "Wybrane realizacje" },
   "portfolio.subtitle": {
     en: "Explore websites and systems built with measurable business outcomes in mind.",
@@ -55,7 +115,10 @@ export const translations: Translations = {
     en: "Click to enlarge image",
     pl: "Kliknij, aby powiększyć zdjęcie",
   },
-  "portfolio.carousel.previous": { en: "Previous image", pl: "Poprzednie zdjęcie" },
+  "portfolio.carousel.previous": {
+    en: "Previous image",
+    pl: "Poprzednie zdjęcie",
+  },
   "portfolio.carousel.next": { en: "Next image", pl: "Następne zdjęcie" },
   "portfolio.carousel.goTo": { en: "Go to image", pl: "Przejdź do zdjęcia" },
 
@@ -111,7 +174,7 @@ export const translations: Translations = {
     pl: "Automatyzacja Sprzedaży",
   },
   "whyme.seo_ai.description": {
-    en: "Your business on autopilot. I implement systems that sell for you. From payment automation to intelligent chatbots and handling digital products—your company earns even when you are resting.",
+    en: "Your business on autopilot. I implement systems that sell for you. From payment automation to intelligent chatbots and handling digital products-your company earns even when you are resting.",
     pl: "Twój biznes na autopilocie. Wdrażam systemy, które sprzedają za Ciebie. Od automatyzacji płatności po inteligentne chatboty i obsługę produktów cyfrowych - Twoja firma zarabia nawet wtedy, gdy Ty odpoczywasz.",
   },
   "whyme.seo_ai.skill1": { en: "24/7 Sales", pl: "Sprzedaż 24/7" },
@@ -290,7 +353,7 @@ export const translations: Translations = {
     pl: "Każdy projekt traktuję indywidualnie.",
   },
   "lead.body.rest": {
-    en: " Whether you need a simple business card site or an advanced system with AI — I'm here to turn your challenges into effective solutions.",
+    en: " Whether you need a simple business card site or an advanced system with AI - I'm here to turn your challenges into effective solutions.",
     pl: " Niezależnie od tego, czy potrzebujesz prostej wizytówki, czy zaawansowanego systemu z AI - jestem tu, aby zamienić Twoje wyzwania w sprawne rozwiązania.",
   },
   "lead.custom": {
@@ -410,7 +473,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage: handleSetLanguage, t }}
+    >
       {children}
     </LanguageContext.Provider>
   );

@@ -206,7 +206,7 @@ export const projects: Project[] = [
         title: "OSPILATES STUDIO - High-End Branding & Conversion Platform for Wellness Brand",
         clientName: "",
         challenge:
-          "The client required a distinctive web platform for a boutique Pilates studio to differentiate the brand from corporate, generic fitness chains. The primary business objective was to create an elegant digital space that reflects their premium philosophy, lowers the entry barrier for beginners, and streamlines the customer journey—from initial onboarding and selecting workout intensity levels to membership checkout.",
+          "The client required a distinctive web platform for a boutique Pilates studio to differentiate the brand from corporate, generic fitness chains. The primary business objective was to create an elegant digital space that reflects their premium philosophy, lowers the entry barrier for beginners, and streamlines the customer journey-from initial onboarding and selecting workout intensity levels to membership checkout.",
         solution:
           "I designed and developed a minimalist website utilizing a warm, high-end earthy color palette (deep chocolate browns, soft creams) to evoke a sense of balance and professionalism. The layout was engineered around conversion rate optimization (CRO) principles: featuring an intuitive program breakdown ('Pick your heat'), clear membership pricing models, and prominent social proof. The entire site was optimized for fluid interactions and mobile devices, where the studio captures most of its traffic.",
         results: [

@@ -109,6 +109,8 @@ export const getHomePath = (lang: Language): string =>
 export const getPortfolioPath = (lang: Language): string =>
   buildLocalizedPath(["portfolio"], lang);
 
+export const CV_URL = "/cv/full_stack_AI_sylwia_grzegorczyk_CV.pdf";
+
 export const persistLanguage = (lang: Language): void => {
   if (SUPPORTED_LANGUAGES.includes(lang)) {
     setStoredLanguage(lang);

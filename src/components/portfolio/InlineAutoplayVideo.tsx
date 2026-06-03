@@ -87,7 +87,7 @@ const InlineAutoplayVideo = ({
       }
     };
 
-    /** Ignore brief pause at loop seam — native `loop` handles the restart. */
+    /** Ignore brief pause at loop seam - native `loop` handles the restart. */
     const onPause = () => {
       if (!isVisibleRef.current) return;
       const duration = el.duration;
@@ -142,7 +142,7 @@ const InlineAutoplayVideo = ({
         playsInline
         preload="none"
         disablePictureInPicture
-        // @ts-expect-error — valid on <video>, not yet in all React DOM typings
+        // @ts-expect-error - valid on <video>, not yet in all React DOM typings
         disableRemotePlayback
         controls={false}
         controlsList="nodownload nofullscreen noremoteplayback"
