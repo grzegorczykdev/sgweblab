@@ -11,9 +11,11 @@ interface PortfolioFiltersProps {
   };
 }
 
-/** Re-enable "systems" when app/system case studies are added to the portfolio. */
-const VISIBLE_FILTERS: ProjectFilterCategory[] = ["all", "websites"];
-// const VISIBLE_FILTERS: ProjectFilterCategory[] = ["all", "websites", "systems"];
+const VISIBLE_FILTERS: ProjectFilterCategory[] = [
+  "all",
+  "websites",
+  "systems",
+];
 
 const PortfolioFilters = ({
   activeCategory,

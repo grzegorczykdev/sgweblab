@@ -13,7 +13,7 @@ const PortfolioPage = () => {
   const projects = useMemo(() => filterProjects(category), [category]);
 
   return (
-    <main className="section-padding pt-28 md:pt-32">
+    <main id="main" className="section-padding pt-28 md:pt-32">
       <div className="container-custom space-y-6">
         <PortfolioIntroSection />
 

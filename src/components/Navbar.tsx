@@ -81,6 +81,7 @@ const Navbar = () => {
 
   const renderSectionLink = (item: NavItem, variant: "desktop" | "mobile") => (
     <motion.button
+      type="button"
       key={item.key}
       onClick={() => handleNavClick(item)}
       className={cn(
@@ -99,6 +100,7 @@ const Navbar = () => {
 
   const renderPortfolioLink = (variant: "desktop" | "mobile") => (
     <motion.button
+      type="button"
       onClick={() => handleNavClick(portfolioNavItem)}
       className={cn(
         variant === "desktop"
@@ -172,6 +174,7 @@ const Navbar = () => {
           </div>
 
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={
               isMobileMenuOpen ? t("nav.menu.close") : t("nav.menu.open")

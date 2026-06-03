@@ -7,7 +7,7 @@ const LeadMagnetSection = lazy(() => import("@/components/LeadMagnetSection"));
 
 const HomePage = () => {
   return (
-    <main>
+    <main id="main">
       <HeroSection />
       <Suspense fallback={<div className="min-h-[60vh]" aria-hidden="true" />}>
         <WhyMeSection />

@@ -7,6 +7,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { useLanguage } from "@/contexts/LanguageContext";
+import type { ProjectMediaFrame } from "@/types/project";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
@@ -14,11 +15,13 @@ import { useCallback, useEffect, useState } from "react";
 interface ProjectImageCarouselProps {
   images: string[];
   altForIndex: (index: number) => string;
+  mediaFrame?: ProjectMediaFrame;
 }
 
 const ProjectImageCarousel = ({
   images,
   altForIndex,
+  mediaFrame,
 }: ProjectImageCarouselProps) => {
   const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
@@ -69,12 +72,18 @@ const ProjectImageCarousel = ({
         <CarouselContent className="-ml-0">
           {images.map((src, index) => (
             <CarouselItem key={src} className="pl-0 basis-full">
-              <div className="relative w-full overflow-hidden rounded-xl border border-border/50 bg-muted/20">
+              <div
+                className={cn(
+                  "relative w-full overflow-hidden rounded-xl border border-border/50",
+                  !mediaFrame && "bg-muted/20",
+                )}
+              >
                 <ProjectImageZoomTrigger
                   src={src}
                   alt={altForIndex(index)}
                   onClick={() => openLightbox(index)}
-                  adaptiveFrame
+                  adaptiveFrame={!mediaFrame}
+                  mediaFrame={mediaFrame}
                 />
               </div>
             </CarouselItem>

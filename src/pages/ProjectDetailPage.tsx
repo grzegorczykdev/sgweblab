@@ -20,7 +20,7 @@ const ProjectDetailPage = () => {
   }
 
   return (
-    <main className="section-padding pt-28 md:pt-32">
+    <main id="main" className="section-padding pt-28 md:pt-32">
       <div className="container-custom space-y-6">
         <Link
           to={getPortfolioPath(language)}
@@ -34,7 +34,9 @@ const ProjectDetailPage = () => {
           project={project}
           language={language}
           labels={{
-            client: t("portfolio.client"),
+            summary: t("portfolio.summary"),
+            github: t("portfolio.github"),
+            liveDemo: t("portfolio.liveDemo"),
             challenge: t("portfolio.challenge"),
             solution: t("portfolio.solution"),
             results: t("portfolio.results"),

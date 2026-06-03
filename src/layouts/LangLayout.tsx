@@ -34,6 +34,12 @@ const LangLayout = () => {
   return (
     <LanguageProvider initialLanguage={parsed.lang}>
       <ScrollManager />
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary focus:shadow-md"
+      >
+        {parsed.lang === "pl" ? "Przejdź do treści" : "Skip to content"}
+      </a>
       <div className="min-h-screen bg-background">
         <Navbar />
         <Outlet />

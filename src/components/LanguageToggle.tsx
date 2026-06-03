@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 type Language = "pl" | "en";
 
 interface LanguageToggleProps {
@@ -11,6 +13,7 @@ const LanguageToggle = ({
   onLanguageChange,
   variant = "desktop",
 }: LanguageToggleProps) => {
+  const { t } = useLanguage();
   const isDesktop = variant === "desktop";
 
   const baseButtonClass = isDesktop
@@ -23,12 +26,14 @@ const LanguageToggle = ({
   return (
     <div className={isDesktop ? "flex items-center gap-2" : "flex items-center gap-2 py-2"}>
       {!isDesktop && (
-        <span className="text-sm text-muted-foreground">Language:</span>
+        <span className="text-sm text-muted-foreground">{t("nav.language")}:</span>
       )}
       {isDesktop ? (
         <div className="flex items-center glass rounded-full p-1.5 border border-white/20 shadow-sm">
           <button
+            type="button"
             onClick={() => onLanguageChange("en")}
+            aria-pressed={language === "en"}
             className={`${baseButtonClass} ${
               language === "en" ? activeClass : inactiveClass
             }`}
@@ -36,7 +41,9 @@ const LanguageToggle = ({
             EN
           </button>
           <button
+            type="button"
             onClick={() => onLanguageChange("pl")}
+            aria-pressed={language === "pl"}
             className={`${baseButtonClass} ${
               language === "pl" ? activeClass : inactiveClass
             }`}
@@ -47,7 +54,9 @@ const LanguageToggle = ({
       ) : (
         <>
           <button
+            type="button"
             onClick={() => onLanguageChange("en")}
+            aria-pressed={language === "en"}
             className={`${baseButtonClass} ${
               language === "en" ? activeClass : inactiveClass
             }`}
@@ -55,7 +64,9 @@ const LanguageToggle = ({
             EN
           </button>
           <button
+            type="button"
             onClick={() => onLanguageChange("pl")}
+            aria-pressed={language === "pl"}
             className={`${baseButtonClass} ${
               language === "pl" ? activeClass : inactiveClass
             }`}

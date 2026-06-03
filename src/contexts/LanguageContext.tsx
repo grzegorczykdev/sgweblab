@@ -26,6 +26,16 @@ export const translations: Translations = {
   "nav.cta.contact": { en: "Get in touch", pl: "Skontaktuj się ze mną" },
   "nav.menu.open": { en: "Open menu", pl: "Otwórz menu" },
   "nav.menu.close": { en: "Close menu", pl: "Zamknij menu" },
+  "nav.language": { en: "Language", pl: "Język" },
+
+  "notFound.message": {
+    en: "Oops! Page not found.",
+    pl: "Ups! Nie znaleziono strony.",
+  },
+  "notFound.back": {
+    en: "Return to home",
+    pl: "Wróć na stronę główną",
+  },
 
   // Portfolio
   "portfolio.intro.title": {
@@ -102,7 +112,10 @@ export const translations: Translations = {
     en: "Applications & Systems",
     pl: "Aplikacje i Systemy",
   },
-  "portfolio.client": { en: "Client", pl: "Klient" },
+  "portfolio.summary": { en: "Project pitch", pl: "Pitch projektu" },
+  "portfolio.architecture": { en: "System architecture", pl: "Architektura systemu" },
+  "portfolio.github": { en: "View on GitHub", pl: "Zobacz na GitHubie" },
+  "portfolio.liveDemo": { en: "Live demo", pl: "Demo na żywo" },
   "portfolio.challenge": { en: "Business challenge", pl: "Wyzwanie biznesowe" },
   "portfolio.solution": { en: "My solution", pl: "Moje rozwiązanie" },
   "portfolio.results": { en: "Results achieved", pl: "Osiągnięte wyniki" },

@@ -38,6 +38,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/en"/>
   </url>
   <url>
+    <loc>https://sgweblab.com/portfolio/nutrimind-rag-zywienie-kliniczne/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/nutrimind-rag-zywienie-kliniczne/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/nutrimind-rag-clinical-nutrition/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/nutrimind-rag-clinical-nutrition/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/nutrimind-rag-clinical-nutrition/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/nutrimind-rag-zywienie-kliniczne/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/nutrimind-rag-clinical-nutrition/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/nutrimind-rag-clinical-nutrition/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/ai-nutritionist-analiza-posilkow/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/ai-nutritionist-analiza-posilkow/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/ai-nutritionist-meal-analysis/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/ai-nutritionist-meal-analysis/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/ai-nutritionist-meal-analysis/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/ai-nutritionist-analiza-posilkow/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/ai-nutritionist-meal-analysis/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/ai-nutritionist-meal-analysis/en"/>
+  </url>
+  <url>
     <loc>https://sgweblab.com/portfolio/strona-gabinet-psychoterapii/pl</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>

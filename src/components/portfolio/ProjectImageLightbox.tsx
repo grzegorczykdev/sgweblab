@@ -13,6 +13,7 @@ interface ProjectImageLightboxProps {
   className?: string;
   imageClassName?: string;
   adaptiveFrame?: boolean;
+  mediaFrame?: { aspectRatio: string; objectFit?: "cover" | "contain" };
 }
 
 const ProjectImageLightbox = ({
@@ -21,6 +22,7 @@ const ProjectImageLightbox = ({
   className,
   imageClassName = "object-cover",
   adaptiveFrame = false,
+  mediaFrame,
 }: ProjectImageLightboxProps) => {
   const [open, setOpen] = useState(false);
 
@@ -33,6 +35,7 @@ const ProjectImageLightbox = ({
           onClick={() => setOpen(true)}
           imageClassName={imageClassName}
           adaptiveFrame={adaptiveFrame}
+          mediaFrame={mediaFrame}
         />
       </div>
       <DialogContent

@@ -11,14 +11,27 @@ const SeoManager = () => {
       <link rel="canonical" href={seo.canonical} />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+      {seo.robots && <meta name="robots" content={seo.robots} />}
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
-      <meta property="og:locale" content={seo.lang === "pl" ? "pl_PL" : "en_US"} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={seo.canonical} />
+      <meta property="og:image" content={seo.image} />
+      <meta
+        property="og:locale"
+        content={seo.lang === "pl" ? "pl_PL" : "en_US"}
+      />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
       <link rel="alternate" hrefLang="pl" href={seo.alternates.pl} />
       <link rel="alternate" hrefLang="en" href={seo.alternates.en} />
-      <link rel="alternate" hrefLang="x-default" href={seo.alternates.xDefault} />
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={seo.alternates.xDefault}
+      />
     </Helmet>
   );
 };

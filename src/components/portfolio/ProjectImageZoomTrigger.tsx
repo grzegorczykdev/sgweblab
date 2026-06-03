@@ -13,6 +13,8 @@ interface ProjectImageZoomTriggerProps {
   imageClassName?: string;
   /** Shrink frame to short images; cap tall ones at 16:10 with centered contain. */
   adaptiveFrame?: boolean;
+  /** Fixed aspect frame - image fills the box (cover) without side/top/bottom bars. */
+  mediaFrame?: { aspectRatio: string; objectFit?: "cover" | "contain" };
 }
 
 const ProjectImageZoomTrigger = ({
@@ -21,6 +23,7 @@ const ProjectImageZoomTrigger = ({
   onClick,
   imageClassName = "object-cover",
   adaptiveFrame = false,
+  mediaFrame,
 }: ProjectImageZoomTriggerProps) => {
   const { t } = useLanguage();
   const imgRef = useRef<HTMLImageElement>(null);
@@ -45,7 +48,7 @@ const ProjectImageZoomTrigger = ({
   );
 
   useEffect(() => {
-    if (!adaptiveFrame) {
+    if (!adaptiveFrame || mediaFrame) {
       return;
     }
     setFrameMode("natural");
@@ -55,16 +58,19 @@ const ProjectImageZoomTrigger = ({
     }
   }, [src, adaptiveFrame, updateFrameMode]);
 
-  const isCapped = adaptiveFrame && frameMode === "capped";
+  const isCapped = adaptiveFrame && !mediaFrame && frameMode === "capped";
+  const frameObjectFit = mediaFrame?.objectFit ?? "cover";
 
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label={t("portfolio.image.expand")}
+      style={mediaFrame ? { aspectRatio: mediaFrame.aspectRatio } : undefined}
       className={cn(
         "group relative block w-full overflow-hidden cursor-zoom-in",
-        !adaptiveFrame && "h-full",
+        mediaFrame && "flex items-center justify-center",
+        !adaptiveFrame && !mediaFrame && "h-full",
         isCapped && "flex aspect-[16/10] items-center justify-center",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
       )}
@@ -77,11 +83,20 @@ const ProjectImageZoomTrigger = ({
         onLoad={handleImageLoad}
         className={cn(
           "transition-transform duration-300 ease-out group-hover:scale-[1.02]",
-          adaptiveFrame && frameMode === "natural" && "h-auto w-full",
+          mediaFrame && "h-full w-full object-center",
+          mediaFrame && frameObjectFit === "cover" && "object-cover",
+          mediaFrame && frameObjectFit === "contain" && "object-contain",
+          adaptiveFrame &&
+            !mediaFrame &&
+            frameMode === "natural" &&
+            "h-auto w-full",
           isCapped && "max-h-full max-w-full object-contain",
-          !adaptiveFrame && "h-full w-full",
-          !adaptiveFrame && imageClassName,
-          adaptiveFrame && frameMode === "natural" && imageClassName,
+          !adaptiveFrame && !mediaFrame && "h-full w-full",
+          !adaptiveFrame && !mediaFrame && imageClassName,
+          adaptiveFrame &&
+            !mediaFrame &&
+            frameMode === "natural" &&
+            imageClassName,
         )}
       />
       <span
