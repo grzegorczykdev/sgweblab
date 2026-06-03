@@ -6,20 +6,43 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { Button } from "@/components/ui/button";
 import LanguageToggle from "@/components/LanguageToggle";
+import { getEquivalentPath } from "@/lib/portfolio";
+import { getHomePath, getPortfolioPath, persistLanguage } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
-const navItems = [
-  { key: "nav.about", href: "#about" },
-  { key: "nav.services", href: "#services" },
-  { key: "nav.contact", href: "#contact" },
+type NavItem = {
+  key: string;
+  href: string;
+  type: "section" | "page";
+};
+
+const sectionNavItems: NavItem[] = [
+  { key: "nav.about", href: "#about", type: "section" },
+  { key: "nav.services", href: "#services", type: "section" },
+  { key: "nav.contact", href: "#contact", type: "section" },
 ];
+
+const portfolioNavItem: NavItem = {
+  key: "nav.portfolio",
+  href: "/portfolio",
+  type: "page",
+};
+
+const sectionLinkClass =
+  "text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group rounded-full px-3 py-1.5 glass";
+
+const portfolioLinkClass =
+  "text-sm font-medium text-muted-foreground hover:text-accent transition-colors relative group rounded-full px-3 py-1.5 glass";
 
 const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
-  const { scrollToSection } = useScrollToSection();
+  const { scrollToSection, scrollToTop } = useScrollToSection();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const isPortfolioActive = location.pathname.includes("/portfolio");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,16 +52,68 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollAndClose = (href: string) => {
-    scrollToSection(href, () => setIsMobileMenuOpen(false));
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const handleNavClick = (item: NavItem) => {
+    if (item.type === "page") {
+      navigate(getPortfolioPath(language));
+      closeMobileMenu();
+      return;
+    }
+
+    const homePath = getHomePath(language);
+    if (location.pathname !== homePath) {
+      navigate(`${homePath}${item.href}`);
+      closeMobileMenu();
+      return;
+    }
+
+    scrollToSection(item.href, closeMobileMenu);
   };
 
   const handleLanguageChange = (targetLang: "pl" | "en") => {
     const normalized = targetLang === "pl" ? "pl" : "en";
     setLanguage(normalized);
-    const { search, hash } = location;
-    navigate(`/${normalized}${search}${hash}`);
+    persistLanguage(normalized);
+    const mappedPath = getEquivalentPath(location.pathname, normalized);
+    navigate(`${mappedPath}${location.search}${location.hash}`);
   };
+
+  const renderSectionLink = (item: NavItem, variant: "desktop" | "mobile") => (
+    <motion.button
+      key={item.key}
+      onClick={() => handleNavClick(item)}
+      className={cn(
+        variant === "desktop"
+          ? sectionLinkClass
+          : "text-left text-base font-medium text-primary py-2",
+      )}
+      whileHover={variant === "desktop" ? { y: -2 } : undefined}
+    >
+      {t(item.key)}
+      {variant === "desktop" && (
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+      )}
+    </motion.button>
+  );
+
+  const renderPortfolioLink = (variant: "desktop" | "mobile") => (
+    <motion.button
+      onClick={() => handleNavClick(portfolioNavItem)}
+      className={cn(
+        variant === "desktop"
+          ? portfolioLinkClass
+          : "text-left text-base font-medium text-muted-foreground hover:text-accent py-2 transition-colors",
+        isPortfolioActive && "text-accent",
+      )}
+      whileHover={variant === "desktop" ? { y: -2 } : undefined}
+    >
+      {t(portfolioNavItem.key)}
+      {variant === "desktop" && (
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+      )}
+    </motion.button>
+  );
 
   return (
     <motion.header
@@ -53,36 +128,34 @@ const Navbar = () => {
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <motion.a
-            href="#"
+          <motion.button
+            type="button"
             className="font-display text-xl md:text-2xl font-bold text-primary tracking-tight"
             whileHover={{ scale: 1.02 }}
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            onClick={() => {
+              const homePath = getHomePath(language);
+              if (location.pathname === homePath && !location.hash) {
+                scrollToTop();
+                return;
+              }
+              navigate(homePath);
             }}
           >
             <span className="text-accent">SG</span>WebLab
             <span className="text-accent">.</span>
-          </motion.a>
+          </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.key}
-                onClick={() => scrollAndClose(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group rounded-full px-3 py-1.5 glass"
-                whileHover={{ y: -2 }}
-              >
-                {t(item.key)}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </motion.button>
-            ))}
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-6">
+              {sectionNavItems.map((item) => renderSectionLink(item, "desktop"))}
+            </div>
+            <span
+              className="h-4 w-px bg-border/50 shrink-0"
+              aria-hidden="true"
+            />
+            {renderPortfolioLink("desktop")}
           </div>
 
-          {/* Language Toggle + CTA */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageToggle
               language={language}
@@ -92,16 +165,17 @@ const Navbar = () => {
             <Button
               variant="hero"
               size="sm"
-              onClick={() => scrollAndClose("#contact")}
+              onClick={() => handleNavClick(sectionNavItems[2])}
             >
               {t("nav.cta.contact")}
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? t("nav.menu.close") : t("nav.menu.open")}
+            aria-label={
+              isMobileMenuOpen ? t("nav.menu.close") : t("nav.menu.open")
+            }
             className="md:hidden p-2 text-primary"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -109,7 +183,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -119,15 +192,14 @@ const Navbar = () => {
             className="md:hidden glass border-t border-border/50"
           >
             <div className="container-custom py-6 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => scrollAndClose(item.href)}
-                  className="text-left text-base font-medium text-primary py-2"
-                >
-                  {t(item.key)}
-                </button>
-              ))}
+              {sectionNavItems.map((item) => renderSectionLink(item, "mobile"))}
+
+              <div
+                className="border-t border-border/30 pt-3 mt-0.5"
+                role="separator"
+              >
+                {renderPortfolioLink("mobile")}
+              </div>
 
               <LanguageToggle
                 language={language}
@@ -138,7 +210,7 @@ const Navbar = () => {
               <Button
                 variant="hero"
                 className="w-full mt-2"
-                onClick={() => scrollAndClose("#contact")}
+                onClick={() => handleNavClick(sectionNavItems[2])}
               >
                 {t("nav.cta.contact")}
               </Button>

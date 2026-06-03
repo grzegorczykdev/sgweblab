@@ -1,1 +1,6 @@
-/* /index.html 200
+# Legacy prefix URLs → language suffix (301 for SEO)
+/pl/portfolio/*    /portfolio/:splat/pl    301
+/en/portfolio/*    /portfolio/:splat/en    301
+
+# SPA fallback
+/*    /index.html   200

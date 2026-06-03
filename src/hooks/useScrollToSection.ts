@@ -1,10 +1,14 @@
+import { smoothScrollTo, smoothScrollToSelector } from "@/lib/smooth-scroll";
+
 export const useScrollToSection = () => {
   const scrollToSection = (selector: string, onAfterScroll?: () => void) => {
-    const element = document.querySelector(selector);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    smoothScrollToSelector(selector);
     onAfterScroll?.();
   };
-  return { scrollToSection };
+
+  const scrollToTop = () => {
+    smoothScrollTo(0);
+  };
+
+  return { scrollToSection, scrollToTop };
 };

@@ -1,3 +1,4 @@
+import { persistLanguage } from "@/lib/i18n";
 import React, {
   createContext,
   useContext,
@@ -21,9 +22,42 @@ export const translations: Translations = {
   "nav.about": { en: "About Me", pl: "O mnie" },
   "nav.services": { en: "Services", pl: "Usługi" },
   "nav.contact": { en: "Contact", pl: "Kontakt" },
+  "nav.portfolio": { en: "Portfolio", pl: "Portfolio" },
   "nav.cta.contact": { en: "Get in touch", pl: "Skontaktuj się ze mną" },
   "nav.menu.open": { en: "Open menu", pl: "Otwórz menu" },
   "nav.menu.close": { en: "Close menu", pl: "Zamknij menu" },
+
+  // Portfolio
+  "portfolio.title": { en: "Selected projects", pl: "Wybrane realizacje" },
+  "portfolio.subtitle": {
+    en: "Explore websites and systems built with measurable business outcomes in mind.",
+    pl: "Poznaj strony i systemy zaprojektowane z myślą o mierzalnych efektach biznesowych.",
+  },
+  "portfolio.filter.all": { en: "All", pl: "Wszystkie" },
+  "portfolio.filter.websites": {
+    en: "Websites & E-commerce",
+    pl: "Strony i E-commerce",
+  },
+  "portfolio.filter.systems": {
+    en: "Applications & Systems",
+    pl: "Aplikacje i Systemy",
+  },
+  "portfolio.client": { en: "Client", pl: "Klient" },
+  "portfolio.challenge": { en: "Business challenge", pl: "Wyzwanie biznesowe" },
+  "portfolio.solution": { en: "My solution", pl: "Moje rozwiązanie" },
+  "portfolio.results": { en: "Results achieved", pl: "Osiągnięte wyniki" },
+  "portfolio.back": { en: "Back to portfolio", pl: "Wróć do portfolio" },
+  "portfolio.disclaimer": {
+    en: "Sensitive client data and company names have been changed for portfolio presentation purposes.",
+    pl: "Dane wrażliwe klienta oraz nazwa firmy zostały zmienione na potrzeby prezentacji w portfolio.",
+  },
+  "portfolio.image.expand": {
+    en: "Click to enlarge image",
+    pl: "Kliknij, aby powiększyć zdjęcie",
+  },
+  "portfolio.carousel.previous": { en: "Previous image", pl: "Poprzednie zdjęcie" },
+  "portfolio.carousel.next": { en: "Next image", pl: "Następne zdjęcie" },
+  "portfolio.carousel.goTo": { en: "Go to image", pl: "Przejdź do zdjęcia" },
 
   // Hero Section
   "hero.stats.years": { en: "Years of experience", pl: "Lata doświadczenia" },
@@ -350,8 +384,16 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   );
 
   useEffect(() => {
-    setLanguage(normalizeLanguage(initialLanguage));
+    const normalized = normalizeLanguage(initialLanguage);
+    setLanguage(normalized);
+    persistLanguage(normalized);
   }, [initialLanguage]);
+
+  const handleSetLanguage = useCallback((lang: Language) => {
+    const normalized = normalizeLanguage(lang);
+    setLanguage(normalized);
+    persistLanguage(normalized);
+  }, []);
 
   const t = useCallback(
     (key: string): string => {
@@ -368,7 +410,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

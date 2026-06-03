@@ -137,6 +137,33 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  [id="about"],
+  [id="services"],
+  [id="contact"] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    [id="about"],
+    [id="services"],
+    [id="contact"] {
+      scroll-margin-top: 5.5rem;
+    }
   }
 
   body {

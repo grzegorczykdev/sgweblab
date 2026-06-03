@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sgweblab.com/pl</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/pl"/>
@@ -12,11 +12,101 @@
   </url>
   <url>
     <loc>https://sgweblab.com/en</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/pl"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/strona-gabinet-psychoterapii/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/strona-gabinet-psychoterapii/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/psychotherapy-website/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/psychotherapy-website/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/psychotherapy-website/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/strona-gabinet-psychoterapii/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/psychotherapy-website/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/psychotherapy-website/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/nowoczesna-strona-agencyjna-sgweblab/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/nowoczesna-strona-agencyjna-sgweblab/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/modern-agency-website-sgweblab/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/modern-agency-website-sgweblab/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/modern-agency-website-sgweblab/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/nowoczesna-strona-agencyjna-sgweblab/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/modern-agency-website-sgweblab/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/modern-agency-website-sgweblab/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/landing-page-subskrypcja-kawy-roast-flow/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/landing-page-subskrypcja-kawy-roast-flow/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/roast-flow-coffee-subscription-landing/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/roast-flow-coffee-subscription-landing/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/roast-flow-coffee-subscription-landing/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/landing-page-subskrypcja-kawy-roast-flow/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/roast-flow-coffee-subscription-landing/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/roast-flow-coffee-subscription-landing/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/strona-studio-pilates-ospilates/pl</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/strona-studio-pilates-ospilates/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/pilates-studio-website-ospilates/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/pilates-studio-website-ospilates/en"/>
+  </url>
+  <url>
+    <loc>https://sgweblab.com/portfolio/pilates-studio-website-ospilates/en</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sgweblab.com/portfolio/strona-studio-pilates-ospilates/pl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sgweblab.com/portfolio/pilates-studio-website-ospilates/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sgweblab.com/portfolio/pilates-studio-website-ospilates/en"/>
   </url>
 </urlset>
