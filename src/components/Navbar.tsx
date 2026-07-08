@@ -34,6 +34,9 @@ const sectionLinkClass =
 const portfolioLinkClass =
   "text-sm font-medium text-muted-foreground hover:text-accent transition-colors relative group rounded-full px-3 py-1.5 glass";
 
+// Temporarily hide portfolio while the section is disabled.
+const SHOW_PORTFOLIO = false;
+
 const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
@@ -151,11 +154,15 @@ const Navbar = () => {
             <div className="flex items-center gap-6">
               {sectionNavItems.map((item) => renderSectionLink(item, "desktop"))}
             </div>
-            <span
-              className="h-4 w-px bg-border/50 shrink-0"
-              aria-hidden="true"
-            />
-            {renderPortfolioLink("desktop")}
+            {SHOW_PORTFOLIO && (
+              <>
+                <span
+                  className="h-4 w-px bg-border/50 shrink-0"
+                  aria-hidden="true"
+                />
+                {renderPortfolioLink("desktop")}
+              </>
+            )}
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -197,12 +204,14 @@ const Navbar = () => {
             <div className="container-custom py-6 flex flex-col gap-4">
               {sectionNavItems.map((item) => renderSectionLink(item, "mobile"))}
 
-              <div
-                className="border-t border-border/30 pt-3 mt-0.5"
-                role="separator"
-              >
-                {renderPortfolioLink("mobile")}
-              </div>
+              {SHOW_PORTFOLIO && (
+                <div
+                  className="border-t border-border/30 pt-3 mt-0.5"
+                  role="separator"
+                >
+                  {renderPortfolioLink("mobile")}
+                </div>
+              )}
 
               <LanguageToggle
                 language={language}
