@@ -1,12 +1,44 @@
+import PortfolioFilters from "@/components/portfolio/PortfolioFilters";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+import PortfolioIntroSection from "@/components/portfolio/PortfolioIntroSection";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getHomePath } from "@/lib/i18n";
-import { Navigate } from "react-router-dom";
+import { filterProjects } from "@/lib/portfolio";
+import type { ProjectFilterCategory } from "@/types/project";
+import { useMemo, useState } from "react";
 
 const PortfolioPage = () => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
+  const [category, setCategory] = useState<ProjectFilterCategory>("all");
 
-  // Temporarily hidden: portfolio section is disabled for now.
-  return <Navigate to={getHomePath(language)} replace />;
+  const projects = useMemo(() => filterProjects(category), [category]);
+
+  return (
+    <main id="main" className="section-padding pt-28 md:pt-32">
+      <div className="container-custom space-y-6">
+        <PortfolioIntroSection />
+
+        <div
+          className="h-px w-full bg-border/80"
+          role="separator"
+          aria-hidden
+        />
+
+        <div id="portfolio-projects" className="scroll-mt-28 space-y-6">
+          <PortfolioFilters
+            activeCategory={category}
+            onChange={setCategory}
+            labels={{
+              all: t("portfolio.filter.all"),
+              websites: t("portfolio.filter.websites"),
+              systems: t("portfolio.filter.systems"),
+            }}
+          />
+
+          <PortfolioGrid projects={projects} language={language} />
+        </div>
+      </div>
+    </main>
+  );
 };
 
 export default PortfolioPage;
