@@ -87,8 +87,8 @@ export const translations: Translations = {
     pl: "Mam doświadczenie w pracy dla międzynarodowych, rozproszonych zespołów. Stawiam na wysoką kulturę komunikacji asynchronicznej.",
   },
   "portfolio.intro.closing": {
-    en: "Whether you are looking to recruit a specialist for a demanding AI initiative or seeking a technical partner to build a high-performance digital product for your business - take a look at my projects below or download my CV and let's connect!",
-    pl: "Niezależnie od tego, czy rekrutujesz do wymagającego projektu AI, czy szukasz partnera do zbudowania zaawansowanego produktu technologicznego dla Twojej firmy - zapraszam do zapoznania się z moimi projektami poniżej lub pobrania mojego CV!",
+    en: "Whether you are looking to recruit a specialist for a demanding AI initiative or seeking a technical partner to build a high-performance digital product for your business - take a look at my projects below and let's connect!",
+    pl: "Niezależnie od tego, czy rekrutujesz do wymagającego projektu AI, czy szukasz partnera do zbudowania zaawansowanego produktu technologicznego dla Twojej firmy - zapraszam do zapoznania się z moimi projektami poniżej!",
   },
   "portfolio.intro.cta": {
     en: "Explore my work",

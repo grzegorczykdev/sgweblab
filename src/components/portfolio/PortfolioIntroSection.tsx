@@ -1,5 +1,4 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CV_URL } from "@/lib/i18n";
 import type { Language } from "@/types/project";
 
 const HIGHLIGHT_TERMS: Record<Language, string[]> = {
@@ -76,15 +75,6 @@ const PortfolioIntroSection = () => {
         <p className="text-sm leading-relaxed text-neutral-600">
           {t("portfolio.intro.closing")}
         </p>
-
-        <a
-          href={CV_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block rounded-full border border-neutral-950 px-6 py-2.5 text-sm font-medium text-neutral-950 transition-colors hover:bg-neutral-950 hover:text-white"
-        >
-          {t("portfolio.intro.downloadCv")}
-        </a>
       </div>
     </section>
   );
