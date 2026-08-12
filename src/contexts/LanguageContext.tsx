@@ -157,8 +157,8 @@ export const translations: Translations = {
   "whyme.header": { en: "About Me", pl: "O mnie" },
   "whyme.title": { en: "Why Me", pl: "Dlaczego Ja" },
   "whyme.subtitle": {
-    en: "Software engineering with specialist domain expertise. I help health & care brands and modern businesses across Poland.",
-    pl: "Inżynieria oprogramowania ze specjalistycznym zapleczem. Pomagam markom z branży health & care oraz nowoczesnym biznesom w całej Polsce.",
+    en: "Software engineering with specialist domain expertise. I help health & care brands and modern businesses.",
+    pl: "Inżynieria oprogramowania ze specjalistycznym zapleczem. Pomagam markom z branży health & care oraz nowoczesnym biznesom.",
   },
   "whyme.quality.title": {
     en: "Architecture of Success",
