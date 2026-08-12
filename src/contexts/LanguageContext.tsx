@@ -157,8 +157,8 @@ export const translations: Translations = {
   "whyme.header": { en: "About Me", pl: "O mnie" },
   "whyme.title": { en: "Why Me", pl: "Dlaczego Ja" },
   "whyme.subtitle": {
-    en: "I combine passion and knowledge with the real needs of your business.",
-    pl: "Łączę pasję i wiedzę z realnymi potrzebami Twojego biznesu",
+    en: "Software engineering with specialist domain expertise. I help health & care brands and modern businesses across Poland.",
+    pl: "Inżynieria oprogramowania ze specjalistycznym zapleczem. Pomagam markom z branży health & care oraz nowoczesnym biznesom w całej Polsce.",
   },
   "whyme.quality.title": {
     en: "Architecture of Success",
@@ -177,24 +177,24 @@ export const translations: Translations = {
     pl: "Widoczność w nowej erze. Twoja strona musi być widoczna nie tylko dla ludzi, ale i dla algorytmów. Optymalizuję kod tak, aby Twój biznes był polecany przez asystentów AI, takich jak ChatGPT czy Gemini.",
   },
   "whyme.seo_ai.title": {
-    en: "Sales Automation",
-    pl: "Automatyzacja Sprzedaży",
+    en: "Dual perspective: IT + Health",
+    pl: "Podwójna perspektywa: IT + Health",
   },
   "whyme.seo_ai.description": {
-    en: "Your business on autopilot. I implement systems that sell for you. From payment automation to intelligent chatbots and handling digital products-your company earns even when you are resting.",
-    pl: "Twój biznes na autopilocie. Wdrażam systemy, które sprzedają za Ciebie. Od automatyzacji płatności po inteligentne chatboty i obsługę produktów cyfrowych - Twoja firma zarabia nawet wtedy, gdy Ty odpoczywasz.",
+    en: "As a developer with a dietetics education, I thoroughly understand the specifics of the health, beauty, and medical industries. You don't have to explain the logic of health products or patient needs to me — I turn that knowledge into intuitive systems, calculators, and platforms. I understand your business inside out, combining the precision of code with the sensitivity of care and health services.",
+    pl: "Jako programistka z wykształceniem dietetycznym doskonale rozumiem specyfikę branży health, beauty i medical. Nie musisz tłumaczyć mi logiki produktów zdrowotnych czy potrzeb pacjenta – przekuwam tę wiedzę w intuicyjne systemy, kalkulatory czy platformy. Rozumiem Twój biznes od podszewki, łącząc precyzję kodu z wrażliwością sektora usług opiekuńczych i zdrowotnych.",
   },
-  "whyme.seo_ai.skill1": { en: "24/7 Sales", pl: "Sprzedaż 24/7" },
-  "whyme.seo_ai.skill2": { en: "Online payments", pl: "Płatności online" },
-  "whyme.seo_ai.skill3": { en: "Digital products", pl: "Produkty cyfrowe" },
-  "whyme.seo_ai.skill4": { en: "AI Assistants", pl: "Asystenci AI" },
+  "whyme.seo_ai.skill1": { en: "Health & Care", pl: "Health & Care" },
+  "whyme.seo_ai.skill2": { en: "Medical", pl: "Medycyna" },
+  "whyme.seo_ai.skill3": { en: "Dietetics", pl: "Dietetyka" },
+  "whyme.seo_ai.skill4": { en: "Beauty & Wellness", pl: "Beauty & Wellness" },
   "whyme.modern_ai.title": {
     en: "Partnership, not just a service",
     pl: "Partnerstwo, nie tylko usługa",
   },
   "whyme.modern_ai.description": {
-    en: "Don't know where to start? I will guide you through the entire process, from choosing a domain to configuring your business card site, all the way to deployment and optimization. You get full support and a tool that you truly understand and can use.",
-    pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces, od wyboru domeny po konfigurację wizytówki, aż do wdrożenia i optymalizacji strony. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz i potrafisz obsługiwać.",
+    en: "Don't know where to start? I will guide you through the entire process — from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry — I approach every project with the same commitment.",
+    pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces – od domeny po wdrożenie. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz. Niezależnie od tego, czy prowadzisz gabinet dietetyczny, klinikę, czy biznes z zupełnie innej branży – podchodzę do każdego projektu z takim samym zaangażowaniem.",
   },
   "whyme.modern_ai.skill1": { en: "A to Z Support", pl: "Wsparcie od A do Z" },
   "whyme.modern_ai.skill2": {
@@ -209,23 +209,23 @@ export const translations: Translations = {
   "whyme.effect.label": { en: "Effect", pl: "Efekt" },
   "whyme.quality.effect": {
     en: "Lightning-fast site, ready to fight for the top spots in search engines.",
-    pl: "Błyskawiczna strona, gotowa na walkę o pierwsze miejsca w wyszukwiarkach.",
+    pl: "Błyskawiczna strona, gotowa na walkę o pierwsze miejsca w wyszukiwarkach.",
   },
   "whyme.strategy.effect": {
-    en: "Support throughout the entire process, regardless of your current level of expertise.",
-    pl: "Wsparcie przy całym procesie, bez względu na Twój obecny poziom zaawansowania.",
+    en: "Support throughout the entire process, regardless of your industry and level of expertise.",
+    pl: "Wsparcie przy całym procesie, bez względu na Twoją branżę i poziom zaawansowania.",
   },
   "whyme.seo_ai.effect": {
-    en: "A scalable business without the need for constant supervision.",
-    pl: "Skalowalny biznes bez konieczności ciągłego nadzoru.",
+    en: "Digital tools perfectly tailored to your clients and patients.",
+    pl: "Narzędzia cyfrowe idealnie dopasowane do Twoich klientów i pacjentów.",
   },
   "whyme.partnership.title": {
     en: "Partnership, not just a service",
     pl: "Partnerstwo, nie tylko usługa",
   },
   "whyme.partnership.description": {
-    en: "Don't know where to start? I will guide you through the entire process, from choosing a domain to configuring your business card site, all the way to deployment and optimization. You get full support and a tool that you truly understand and can use.",
-    pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces, od wyboru domeny po konfigurację wizytówki, aż do wdrożenia i optymalizacji strony. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz i potrafisz obsługiwać.",
+    en: "Don't know where to start? I will guide you through the entire process — from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry — I approach every project with the same commitment.",
+    pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces – od domeny po wdrożenie. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz. Niezależnie od tego, czy prowadzisz gabinet dietetyczny, klinikę, czy biznes z zupełnie innej branży – podchodzę do każdego projektu z takim samym zaangażowaniem.",
   },
   "whyme.cta.label": {
     en: "Plan your launch with me",
@@ -252,8 +252,8 @@ export const translations: Translations = {
     pl: "Architektura Sukcesu: Kod i Strategia",
   },
   "whyme.combined.description": {
-    en: "I create sites that not only delight with design but above all, earn money. I ditch heavy templates for custom solutions that I optimize for SEO from the very first line of code. Thanks to this, your service is lightning-fast, secure, and ready to fight for the top spots in Google.",
-    pl: "Tworzę strony, które nie tylko zachwycają designem, ale przede wszystkim zarabiają. Rezygnuję z ciężkich szablonów na rzecz autorskich rozwiązań, które optymalizuję pod kątem SEO od pierwszej linijki kodu. Dzięki temu Twój serwis jest błyskawiczny, bezpieczny i gotowy na walkę o pierwsze miejsca w Google.",
+    en: "I create fast websites and applications that not only delight with design, but above all, earn money. I ditch heavy templates for custom solutions optimized for SEO from the first line of code. With a solid full-stack background, I deliver both dedicated systems for the medical and wellness sector and demanding projects for other industries.",
+    pl: "Tworzę szybkie strony i aplikacje, które nie tylko zachwycają designem, ale przede wszystkim zarabiają. Rezygnuję z ciężkich szablonów na rzecz autorskich rozwiązań optymalizowanych pod kątem SEO od pierwszej linijki kodu. Dzięki solidnemu zapleczu full-stack realizuję zarówno dedykowane systemy dla sektora medycznego i wellness, jak i wymagające projekty dla innych branż.",
   },
   "whyme.combined.skill1": { en: "Loading speed", pl: "Szybkość ładowania" },
   "whyme.combined.skill2": { en: "Unique design", pl: "Unikalny projekt" },

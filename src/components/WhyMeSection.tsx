@@ -104,7 +104,7 @@ const WhyMeSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">
           {t('whyme.header')}
