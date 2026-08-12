@@ -127,10 +127,10 @@ const WhyMeSection = () => {
         >
           {/* Combined card */}
           <motion.div variants={itemVariants} className="bento-item group glass h-full flex flex-col">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/25 to-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <combinedFeature.icon className="w-9 h-9 text-accent" />
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-accent/25 to-accent/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+              <combinedFeature.icon className="w-6 h-6 text-accent" />
             </div>
-            <h3 className="font-display text-2xl font-bold text-primary mb-4 leading-tight">
+            <h3 className="font-display text-xl font-bold text-primary mb-3 leading-tight min-h-[3.25rem]">
               {t(combinedFeature.titleKey)}
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-2">
@@ -163,12 +163,12 @@ const WhyMeSection = () => {
                 }`}
               >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-7 h-7 text-accent" />
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="w-6 h-6 text-accent" />
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-xl font-bold text-primary mb-3">
+              <h3 className="font-display text-xl font-bold text-primary mb-3 leading-tight min-h-[3.25rem]">
                 {t(feature.titleKey)}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-2">
