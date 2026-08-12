@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { heroPrerenderPlugin } from "./src/lib/heroPrerenderPlugin";
 
 /** Makes CSS load non-blocking: uses media="print" + onload to prevent render blocking (fixes Lighthouse LCP) */
 function nonBlockingCss() {
@@ -24,7 +25,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), nonBlockingCss()],
+  plugins: [heroPrerenderPlugin(), react(), nonBlockingCss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -10,4 +10,15 @@ if ("requestIdleCallback" in window) {
   window.addEventListener("load", () => void loadDeferredFonts());
 }
 
-createRoot(document.getElementById("root")!).render(<App />);
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(rootElement).render(<App />);
+
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add("react-ready");
+  });
+});

@@ -50,7 +50,10 @@ const HeroSection = () => {
             </motion.h1>
 
             {/* Subheadline — LCP element: visible immediately, no opacity fade */}
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance">
+            <p
+              id="hero-lcp-subheadline"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
+            >
               {t("hero.subheadline")}
             </p>
 
