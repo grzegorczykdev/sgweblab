@@ -114,7 +114,10 @@ export const translations: Translations = {
     pl: "Aplikacje i Systemy",
   },
   "portfolio.summary": { en: "Project pitch", pl: "Pitch projektu" },
-  "portfolio.architecture": { en: "System architecture", pl: "Architektura systemu" },
+  "portfolio.architecture": {
+    en: "System architecture",
+    pl: "Architektura systemu",
+  },
   "portfolio.github": { en: "View on GitHub", pl: "Zobacz na GitHubie" },
   "portfolio.liveDemo": { en: "Live demo", pl: "Demo na żywo" },
   "portfolio.challenge": { en: "Business challenge", pl: "Wyzwanie biznesowe" },
@@ -181,7 +184,7 @@ export const translations: Translations = {
     pl: "Podwójna perspektywa: IT + Health",
   },
   "whyme.seo_ai.description": {
-    en: "As a developer with a dietetics education, I thoroughly understand the specifics of the health, beauty, and medical industries. You don't have to explain the logic of health products or patient needs to me — I turn that knowledge into intuitive systems, calculators, and platforms. I understand your business inside out, combining the precision of code with the sensitivity of care and health services.",
+    en: "As a developer with a dietetics education, I thoroughly understand the specifics of the health, beauty, and medical industries. You don't have to explain the logic of health products or patient needs to me - I turn that knowledge into intuitive systems, calculators, and platforms. I understand your business inside out, combining the precision of code with the sensitivity of care and health services.",
     pl: "Jako programistka z wykształceniem dietetycznym doskonale rozumiem specyfikę branży health, beauty i medical. Nie musisz tłumaczyć mi logiki produktów zdrowotnych czy potrzeb pacjenta – przekuwam tę wiedzę w intuicyjne systemy, kalkulatory czy platformy. Rozumiem Twój biznes od podszewki, łącząc precyzję kodu z wrażliwością sektora usług opiekuńczych i zdrowotnych.",
   },
   "whyme.seo_ai.skill1": { en: "Health & Care", pl: "Health & Care" },
@@ -193,7 +196,7 @@ export const translations: Translations = {
     pl: "Partnerstwo, nie tylko usługa",
   },
   "whyme.modern_ai.description": {
-    en: "Don't know where to start? I will guide you through the entire process — from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry — I approach every project with the same commitment.",
+    en: "Don't know where to start? I will guide you through the entire process - from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry - I approach every project with the same commitment.",
     pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces – od domeny po wdrożenie. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz. Niezależnie od tego, czy prowadzisz gabinet dietetyczny, klinikę, czy biznes z zupełnie innej branży – podchodzę do każdego projektu z takim samym zaangażowaniem.",
   },
   "whyme.modern_ai.skill1": { en: "A to Z Support", pl: "Wsparcie od A do Z" },
@@ -224,7 +227,7 @@ export const translations: Translations = {
     pl: "Partnerstwo, nie tylko usługa",
   },
   "whyme.partnership.description": {
-    en: "Don't know where to start? I will guide you through the entire process — from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry — I approach every project with the same commitment.",
+    en: "Don't know where to start? I will guide you through the entire process - from domain to launch. You get full support from me and a tool you truly understand. Whether you run a nutrition practice, a clinic, or a business in a completely different industry - I approach every project with the same commitment.",
     pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces – od domeny po wdrożenie. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz. Niezależnie od tego, czy prowadzisz gabinet dietetyczny, klinikę, czy biznes z zupełnie innej branży – podchodzę do każdego projektu z takim samym zaangażowaniem.",
   },
   "whyme.cta.label": {

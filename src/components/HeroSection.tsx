@@ -49,7 +49,7 @@ const HeroSection = () => {
               {t("hero.headline")}
             </motion.h1>
 
-            {/* Subheadline — LCP element: visible immediately, no opacity fade */}
+            {/* Subheadline - LCP element: visible immediately, no opacity fade */}
             <p
               id="hero-lcp-subheadline"
               className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
@@ -175,17 +175,23 @@ const HeroSection = () => {
                             <span> {`{ healthData, isLoading }`} </span>
                             <span className="text-primary">=</span>
                             <span className="text-accent">usePatientData</span>
-                            <span>({"{"} key: "care-plan" {"}"})</span>
+                            <span>
+                              ({"{"} key: "care-plan" {"}"})
+                            </span>
                           </div>
                           <div className="pl-2 border-l border-white/10">
-                            <span className="text-primary">useNutrientCalculator</span>
+                            <span className="text-primary">
+                              useNutrientCalculator
+                            </span>
                             <span>{`(() => syncMacros(healthData), [healthData])`}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="rounded-full px-2 py-1 text-[10px] bg-primary/10 text-primary">
                               DietTech
                             </span>
-                            <span className="text-foreground/80">grid-cols-12 • gap-6</span>
+                            <span className="text-foreground/80">
+                              grid-cols-12 • gap-6
+                            </span>
                           </div>
                         </div>
                       </motion.div>
@@ -288,14 +294,22 @@ const HeroSection = () => {
                     {/* Floating chips */}
                     <motion.div
                       animate={{ y: [0, -2, 0], x: [0, 1, 0] }}
-                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                       className="absolute top-6 left-8 rounded-full bg-background/60 border border-white/10 backdrop-blur-xl px-3 py-1.5 text-xs text-muted-foreground shadow-lg"
                     >
                       HealthTech • Glass
                     </motion.div>
                     <motion.div
                       animate={{ y: [0, 3, 0], x: [0, -1, 0] }}
-                      transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                      transition={{
+                        duration: 5.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                       className="absolute bottom-6 right-8 rounded-full bg-primary/15 border border-primary/20 text-primary px-3 py-1.5 text-xs shadow-lg"
                     >
                       Patient-ready UX
