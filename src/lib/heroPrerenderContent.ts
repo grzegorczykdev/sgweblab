@@ -4,15 +4,15 @@ import type { Language } from "@/types/project";
 export const HERO_PRERENDER_COPY = {
   pl: {
     headline:
-      "Twoja strona, która sprzedaje. Zbuduję nowoczesny wizerunek Twojej firmy w sieci.",
+      "Nowoczesne strony i aplikacje dla sektora Health & Care. Zbuduj wizerunek, któremu zaufa pacjent i klient.",
     subheadline:
-      "Tworzę szybkie strony wizytówki i landing page'e zoptymalizowane pod wyszukiwarkę Google. Wdrażam inteligentne rozwiązania AI, konfiguruję sprzedaż produktów cyfrowych i dbam o Twoją lokalną widoczność w Google. Pomogę Ci przyciągnąć wartościowych odbiorców i skutecznie zamienić ich w płacących klientów.",
+      "Jako programistka i specjalistka z zapleczem dietetycznym pomagam markom medycznym, dietetycznym, beauty i wellness zaistnieć w sieci. Tworzę szybkie strony, automatyzuję sprzedaż (ebooków, planów, konsultacji) i wdrażam narzędzia AI, które ułatwiają pracę gabinetów oraz klinik. Zadbaj o widoczność w Google i przyciągnij pacjentów, którzy szukają profesjonalistów.",
   },
   en: {
     headline:
-      "A website that sells. I will build a modern online image for your business.",
+      "Modern websites and apps for the Health & Care sector. Build an image that patients and clients trust.",
     subheadline:
-      "I create fast business card sites and landing pages optimized for Google search. I implement intelligent AI solutions, configure digital product sales, and ensure your local visibility on Google. I will help you attract valuable audiences and effectively turn them into paying customers.",
+      "As a developer and specialist with a nutrition background, I help medical, dietetics, beauty, and wellness brands establish themselves online. I create fast websites, automate sales (ebooks, plans, consultations), and implement AI tools that make clinics and practices easier to run. Strengthen your Google visibility and attract patients looking for professionals.",
   },
 } satisfies Record<Language, { headline: string; subheadline: string }>;
 

@@ -35,7 +35,7 @@ const HeroSection = () => {
             >
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-foreground">
-                Full Stack Engineer & SEO Expert
+                Full Stack Engineer & HealthTech Solutions
               </span>
             </motion.div>
 
