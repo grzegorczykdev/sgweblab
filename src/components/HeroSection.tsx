@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 1, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-8"
@@ -49,15 +49,10 @@ const HeroSection = () => {
               {t("hero.headline")}
             </motion.h1>
 
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
-            >
+            {/* Subheadline — LCP element: visible immediately, no opacity fade */}
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance">
               {t("hero.subheadline")}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
             <motion.div

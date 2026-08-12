@@ -17,6 +17,22 @@
     <link rel="icon" type="image/png" href="/logo/favicon.png" />
     <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
 
+    <!-- Preload LCP font (Inter 400, latin + latin-ext for PL diacritics) -->
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-ext-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Preconnect for third-party (reCAPTCHA) - loaded when form is in view -->
     <link rel="preconnect" href="https://www.google.com" crossorigin />
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
@@ -51,11 +67,7 @@
       content="Building scalable web solutions & driving SEO growth for health and business sectors."
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-F1WRE494EM"
-    ></script>
+    <!-- Google tag (gtag.js) — deferred until browser idle to avoid blocking LCP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -63,7 +75,22 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-F1WRE494EM");
+      function loadGtag() {
+        var script = document.createElement("script");
+        script.src =
+          "https://www.googletagmanager.com/gtag/js?id=G-F1WRE494EM";
+        script.async = true;
+        script.onload = function () {
+          gtag("config", "G-F1WRE494EM");
+        };
+        document.head.appendChild(script);
+      }
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadGtag, { timeout: 3000 });
+      } else {
+        window.addEventListener("load", loadGtag);
+      }
     </script>
 
     <script type="application/ld+json">
