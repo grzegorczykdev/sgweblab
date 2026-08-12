@@ -166,24 +166,24 @@ const HeroSection = () => {
                         className="group rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl p-4 shadow-[0_12px_60px_-30px_rgba(0,0,0,0.8)]"
                       >
                         <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.15em] text-primary/80">
-                          <span>React hooks</span>
+                          <span>Patient hooks</span>
                           <span className="text-accent">live</span>
                         </div>
                         <div className="mt-3 space-y-2 font-mono text-xs text-muted-foreground">
                           <div className="flex items-center gap-2 text-foreground">
                             <span className="text-primary">const</span>
-                            <span> {`{ data, isLoading }`} </span>
+                            <span> {`{ healthData, isLoading }`} </span>
                             <span className="text-primary">=</span>
-                            <span className="text-accent">useQuery</span>
-                            <span>({"{"} key: "seo-metrics" {"}"})</span>
+                            <span className="text-accent">usePatientData</span>
+                            <span>({"{"} key: "care-plan" {"}"})</span>
                           </div>
                           <div className="pl-2 border-l border-white/10">
-                            <span className="text-primary">useEffect</span>
-                            <span>{`(() => setMeta(data), [data])`}</span>
+                            <span className="text-primary">useNutrientCalculator</span>
+                            <span>{`(() => syncMacros(healthData), [healthData])`}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="rounded-full px-2 py-1 text-[10px] bg-primary/10 text-primary">
-                              Tailwind
+                              DietTech
                             </span>
                             <span className="text-foreground/80">grid-cols-12 • gap-6</span>
                           </div>
@@ -209,7 +209,7 @@ const HeroSection = () => {
                       >
                         <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-primary/80">
                           <Sparkles className="w-3 h-3" />
-                          <span>UI fragments</span>
+                          <span>Clinic dashboard</span>
                         </div>
                         <div className="mt-3 space-y-2 font-mono text-xs text-muted-foreground">
                           <div className="flex items-center gap-2 text-foreground">
@@ -218,7 +218,7 @@ const HeroSection = () => {
                           </div>
                           <div className="pl-3 border-l border-white/10 space-y-1">
                             <span className="block text-foreground/90">
-                              {`<Button variant="ghost" className="hover:-translate-y-0.5">`}
+                              {`<PatientCard variant="wellness" className="hover:-translate-y-0.5">`}
                             </span>
                             <span className="block text-primary/90">
                               {`<div className="rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10">`}
@@ -275,7 +275,7 @@ const HeroSection = () => {
                         <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-primary border border-primary/20">
                             <Bot className="w-3 h-3" />
-                            AI insights on keywords
+                            AI health-content insights
                           </span>
                           <span className="flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-accent border border-accent/20">
                             <ArrowRight className="w-3 h-3" />
@@ -291,14 +291,14 @@ const HeroSection = () => {
                       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                       className="absolute top-6 left-8 rounded-full bg-background/60 border border-white/10 backdrop-blur-xl px-3 py-1.5 text-xs text-muted-foreground shadow-lg"
                     >
-                      Glassmorphism • 3D
+                      HealthTech • Glass
                     </motion.div>
                     <motion.div
                       animate={{ y: [0, 3, 0], x: [0, -1, 0] }}
                       transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
                       className="absolute bottom-6 right-8 rounded-full bg-primary/15 border border-primary/20 text-primary px-3 py-1.5 text-xs shadow-lg"
                     >
-                      Realtime UX
+                      Patient-ready UX
                     </motion.div>
                   </div>
                 </div>
