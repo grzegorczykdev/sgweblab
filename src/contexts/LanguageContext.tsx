@@ -140,6 +140,10 @@ export const translations: Translations = {
   "portfolio.carousel.goTo": { en: "Go to image", pl: "Przejdź do zdjęcia" },
 
   // Hero Section
+  "hero.badge": {
+    en: "Full Stack Engineer with 5+ years · HealthTech Solutions",
+    pl: "Programistka Full Stack z ponad 5-letnim doświadczeniem · HealthTech Solutions",
+  },
   "hero.stats.years": { en: "Years of experience", pl: "Lata doświadczenia" },
   "hero.stats.projects": {
     en: "Projects delivered",
@@ -184,8 +188,8 @@ export const translations: Translations = {
     pl: "Podwójna perspektywa: IT + Health",
   },
   "whyme.seo_ai.description": {
-    en: "As a developer with over 5 years of experience and a dietetics education, I thoroughly understand the specifics of the health, beauty, and medical industries. You don't have to explain the logic of health products or patient needs to me - I turn that knowledge into intuitive systems, calculators, and platforms. I understand your business inside out, combining the precision of code with the sensitivity of care and health services.",
-    pl: "Jako programistka z ponad 5-letnim doświadczeniem i wykształceniem dietetycznym doskonale rozumiem specyfikę branży health, beauty i medical. Nie musisz tłumaczyć mi logiki produktów zdrowotnych czy potrzeb pacjenta – przekuwam tę wiedzę w intuicyjne systemy, kalkulatory czy platformy. Rozumiem Twój biznes od podszewki, łącząc precyzję kodu z wrażliwością sektora usług opiekuńczych i zdrowotnych.",
+    en: "As a developer with a dietetics education, I thoroughly understand the specifics of the health, beauty, and medical industries. You don't have to explain the logic of health products or patient needs to me - I turn that knowledge into intuitive systems, calculators, and platforms. I understand your business inside out, combining the precision of code with the sensitivity of care and health services.",
+    pl: "Jako programistka z wykształceniem dietetycznym doskonale rozumiem specyfikę branży health, beauty i medical. Nie musisz tłumaczyć mi logiki produktów zdrowotnych czy potrzeb pacjenta – przekuwam tę wiedzę w intuicyjne systemy, kalkulatory czy platformy. Rozumiem Twój biznes od podszewki, łącząc precyzję kodu z wrażliwością sektora usług opiekuńczych i zdrowotnych.",
   },
   "whyme.seo_ai.skill1": { en: "Health & Care", pl: "Health & Care" },
   "whyme.seo_ai.skill2": { en: "Medical", pl: "Medycyna" },
