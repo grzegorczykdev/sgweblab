@@ -9,6 +9,7 @@ import LangLayout from "@/layouts/LangLayout";
 import HomePage from "@/pages/HomePage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
+import PrivacyPage from "@/pages/PrivacyPage";
 
 const App = () => (
   <TooltipProvider>
@@ -20,6 +21,8 @@ const App = () => (
           <Route element={<LangLayout />}>
             <Route path="portfolio/:slug/:lang" element={<ProjectDetailPage />} />
             <Route path="portfolio/:lang" element={<PortfolioPage />} />
+            <Route path="polityka-prywatnosci/:lang" element={<PrivacyPage />} />
+            <Route path="privacy-policy/:lang" element={<PrivacyPage />} />
             <Route path=":lang" element={<HomePage />} />
           </Route>
 

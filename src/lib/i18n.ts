@@ -109,6 +109,17 @@ export const getHomePath = (lang: Language): string =>
 export const getPortfolioPath = (lang: Language): string =>
   buildLocalizedPath(["portfolio"], lang);
 
+const PRIVACY_SEGMENTS: Record<Language, string[]> = {
+  pl: ["polityka-prywatnosci"],
+  en: ["privacy-policy"],
+};
+
+export const isPrivacyPathSegment = (segment: string | undefined): boolean =>
+  segment === "polityka-prywatnosci" || segment === "privacy-policy";
+
+export const getPrivacyPath = (lang: Language): string =>
+  buildLocalizedPath(PRIVACY_SEGMENTS[lang], lang);
+
 export const CV_URL = "/cv/full_stack_AI_sylwia_grzegorczyk_CV.pdf";
 
 export const persistLanguage = (lang: Language): void => {

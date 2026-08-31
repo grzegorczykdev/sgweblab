@@ -4,7 +4,9 @@ import { useInView } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Input } from "@/components/ui/input";
 import ContactFormField from "@/components/ContactFormField";
+import { getPrivacyPath } from "@/lib/i18n";
 import { z } from "zod";
+import { Link } from "react-router-dom";
 
 const RATE_LIMIT_KEY = "sgweblab_form_hits";
 const RATE_LIMIT_MAX = 2;
@@ -58,7 +60,7 @@ const formSchema = z.object({
 });
 
 const LeadMagnetSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -398,7 +400,14 @@ const LeadMagnetSection = () => {
                 )}
               </motion.button>
               <p className="text-xs text-muted-foreground text-center">
-                {t("lead.privacyNote")}
+                {t("lead.privacyNotePrefix")}
+                <Link
+                  to={getPrivacyPath(language)}
+                  className="text-accent font-medium underline underline-offset-2 hover:no-underline"
+                >
+                  {t("lead.privacyNoteLink")}
+                </Link>
+                {t("lead.privacyNoteSuffix")}
               </p>
               <p className="text-xs text-muted-foreground text-center">
                 {t("lead.antiSpamNote")}

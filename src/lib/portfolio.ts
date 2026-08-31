@@ -1,5 +1,7 @@
 import {
   buildLocalizedPath,
+  getPrivacyPath,
+  isPrivacyPathSegment,
   parseLocalizedPath,
 } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -71,6 +73,10 @@ export const getEquivalentPath = (
 
   if (segments[0] === "portfolio") {
     return buildLocalizedPath(["portfolio"], targetLang);
+  }
+
+  if (isPrivacyPathSegment(segments[0])) {
+    return getPrivacyPath(targetLang);
   }
 
   return buildLocalizedPath([], targetLang);

@@ -394,9 +394,17 @@ export const translations: Translations = {
   "lead.name": { en: "Your Name", pl: "Twoje Imię" },
   "lead.email": { en: "Email Address", pl: "Adres Email" },
   "lead.submit": { en: "Send Message", pl: "Wyślij wiadomość" },
-  "lead.privacyNote": {
-    en: "Your data is safe. I reply within 24h.",
-    pl: "Twoje dane są bezpieczne. Odpowiadam w ciągu 24h.",
+  "lead.privacyNotePrefix": {
+    en: "By sending this form you accept the ",
+    pl: "Wysyłając formularz akceptujesz ",
+  },
+  "lead.privacyNoteLink": {
+    en: "privacy policy",
+    pl: "politykę prywatności",
+  },
+  "lead.privacyNoteSuffix": {
+    en: ". I reply within 24h.",
+    pl: ". Odpowiadam w ciągu 24h.",
   },
   "lead.error": {
     en: "Something went wrong. Please try again in a moment.",
@@ -435,7 +443,37 @@ export const translations: Translations = {
     pl: "Wiadomość jest za długa",
   },
 
+  // Cookies
+  "cookies.title": {
+    en: "We use cookies",
+    pl: "Ta strona używa cookies",
+  },
+  "cookies.description": {
+    en: "We use essential cookies for the site to work and analytics cookies (Google Analytics) only with your consent. Read more in our",
+    pl: "Używamy niezbędnych cookies do działania strony oraz analitycznych (Google Analytics) wyłącznie po Twojej zgodzie. Więcej w",
+  },
+  "cookies.policyLink": {
+    en: "privacy policy",
+    pl: "polityce prywatności",
+  },
+  "cookies.accept": {
+    en: "Accept",
+    pl: "Akceptuję",
+  },
+  "cookies.reject": {
+    en: "Reject",
+    pl: "Odrzucam",
+  },
+
   // Footer
+  "footer.privacy": {
+    en: "Privacy Policy",
+    pl: "Polityka prywatności",
+  },
+  "footer.legalNav": {
+    en: "Legal",
+    pl: "Informacje prawne",
+  },
   "footer.rights": {
     en: "All rights reserved.",
     pl: "Wszelkie prawa zastrzeżone.",

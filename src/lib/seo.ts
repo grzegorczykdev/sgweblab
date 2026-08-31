@@ -1,4 +1,4 @@
-import { getHomePath, getPortfolioPath, parseLocalizedPath } from "@/lib/i18n";
+import { getHomePath, getPortfolioPath, getPrivacyPath, isPrivacyPathSegment, parseLocalizedPath } from "@/lib/i18n";
 import { findProjectBySlug, getProjectAlternateUrls, BASE_URL } from "@/lib/portfolio";
 import type { Language } from "@/types/project";
 
@@ -38,7 +38,7 @@ const PORTFOLIO_SEO = {
   pl: {
     title: "Portfolio realizacji | SGWebLab",
     description:
-      "Przegl?d wdro?onych stron, aplikacji i systemów AI. Zobacz wyzwania, rozwi?zania oraz mierzalne efekty biznesowe.",
+      "Przegl?d wdro?onych stron, aplikacji i systemw AI. Zobacz wyzwania, rozwi?zania oraz mierzalne efekty biznesowe.",
   },
   en: {
     title: "Portfolio projects | SGWebLab",
@@ -47,11 +47,24 @@ const PORTFOLIO_SEO = {
   },
 } as const;
 
+const PRIVACY_SEO = {
+  pl: {
+    title: "Polityka prywatno?ci | SGWebLab",
+    description:
+      "Informacje o przetwarzaniu danych osobowych, formularzu kontaktowym i plikach cookies na stronie sgweblab.com.",
+  },
+  en: {
+    title: "Privacy Policy | SGWebLab",
+    description:
+      "How SG Web Lab processes personal data, contact form submissions, and cookies on sgweblab.com.",
+  },
+} as const;
+
 const NOT_FOUND_SEO = {
   pl: {
     title: "Strona nie znaleziona (404) | SGWebLab",
     description:
-      "??dany adres nie istnieje. Wró? do strony g?ównej lub przejd? do portfolio realizacji.",
+      "??dany adres nie istnieje. Wr? do strony g?wnej lub przejd? do portfolio realizacji.",
   },
   en: {
     title: "Page not found (404) | SGWebLab",
@@ -72,6 +85,12 @@ const portfolioAlternates = (): AlternateLinks => ({
   xDefault: `${BASE_URL}${getPortfolioPath("en")}`,
 });
 
+const privacyAlternates = (): AlternateLinks => ({
+  pl: `${BASE_URL}${getPrivacyPath("pl")}`,
+  en: `${BASE_URL}${getPrivacyPath("en")}`,
+  xDefault: `${BASE_URL}${getPrivacyPath("en")}`,
+});
+
 export const isKnownRoute = (pathname: string): boolean => {
   const { lang, segments } = parseLocalizedPath(pathname);
 
@@ -89,6 +108,10 @@ export const isKnownRoute = (pathname: string): boolean => {
 
   if (segments[0] === "portfolio" && segments[1]) {
     return Boolean(findProjectBySlug(lang, segments[1]));
+  }
+
+  if (isPrivacyPathSegment(segments[0]) && segments.length === 1) {
+    return true;
   }
 
   return false;
@@ -150,6 +173,17 @@ export const resolveSeo = (pathname: string): SeoPayload => {
         image: `${BASE_URL}${project.images[0]}`,
       };
     }
+  }
+
+  if (isPrivacyPathSegment(segments[0]) && segments.length === 1) {
+    return {
+      lang,
+      title: PRIVACY_SEO[lang].title,
+      description: PRIVACY_SEO[lang].description,
+      canonical: `${BASE_URL}${getPrivacyPath(lang)}`,
+      alternates: privacyAlternates(),
+      image: DEFAULT_OG_IMAGE,
+    };
   }
 
   const langFallback: Language = parsedLang ?? "en";

@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import Navbar from "@/components/Navbar";
 import ScrollManager from "@/components/ScrollManager";
 import LocalizedRedirect from "@/components/LocalizedRedirect";
@@ -44,6 +45,7 @@ const LangLayout = () => {
         <Navbar />
         <Outlet />
         <Footer />
+        <CookieConsent />
       </div>
     </LanguageProvider>
   );

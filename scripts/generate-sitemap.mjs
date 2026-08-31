@@ -7,6 +7,7 @@ const today = new Date().toISOString().slice(0, 10);
 
 const homePaths = ["/pl", "/en"];
 const portfolioPaths = ["/portfolio/pl", "/portfolio/en"];
+const privacyPaths = ["/polityka-prywatnosci/pl", "/privacy-policy/en"];
 
 const projectEntries = projects.flatMap((project) => {
   const pl = `/portfolio/${project.slug.pl}/pl`;
@@ -14,7 +15,7 @@ const projectEntries = projects.flatMap((project) => {
   return [pl, en];
 });
 
-const urls = [...new Set([...homePaths, ...portfolioPaths, ...projectEntries])];
+const urls = [...new Set([...homePaths, ...portfolioPaths, ...privacyPaths, ...projectEntries])];
 
 const buildAlternates = (path) => {
   if (path === "/pl" || path === "/en") {
@@ -30,6 +31,14 @@ const buildAlternates = (path) => {
       pl: `${BASE_URL}/portfolio/pl`,
       en: `${BASE_URL}/portfolio/en`,
       xDefault: `${BASE_URL}/portfolio/en`,
+    };
+  }
+
+  if (path === "/polityka-prywatnosci/pl" || path === "/privacy-policy/en") {
+    return {
+      pl: `${BASE_URL}/polityka-prywatnosci/pl`,
+      en: `${BASE_URL}/privacy-policy/en`,
+      xDefault: `${BASE_URL}/privacy-policy/en`,
     };
   }
 
