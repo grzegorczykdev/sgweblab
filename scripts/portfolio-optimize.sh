@@ -1,15 +1,18 @@
 #!/bin/bash
 # Run from a portfolio asset folder, e.g. public/portfolio/nutrimind-rag/
-# Converts PNG/JPG to WebP and compresses MP4 demos.
+# Converts PNG/JPG to WebP and MP4 demos to lightweight WebM (VP9).
 
 mkdir -p OLD
 
-echo "--- Start konwersji wideo (MP4 -> lekki MP4) ---"
+echo "--- Start konwersji wideo (MP4 -> lekki WebM) ---"
 for vid in *.mp4; do
     [ -e "$vid" ] || continue
     echo "Przetwarzam wideo: $vid"
+    filename="${vid%.*}"
     mv "$vid" OLD/
-    ffmpeg -i "OLD/$vid" -an -vf "scale=1500:-2" -c:v libx264 -crf 18 "$vid"
+    ffmpeg -i "OLD/$vid" -an -vf "scale=1500:-2" \
+        -c:v libvpx-vp9 -crf 32 -b:v 0 -row-mt 1 -deadline good -cpu-used 2 \
+        "${filename}.webm"
 done
 
 echo "--- Start konwersji zdjec (JPG/PNG -> WebP) ---"

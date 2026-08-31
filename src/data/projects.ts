@@ -88,7 +88,7 @@ export const projects: Project[] = [
       "/portfolio/ai-nutrition-parser/ai-nutrition-parser-1.webp",
       "/portfolio/ai-nutrition-parser/ai-nutrition-parser-2.webp",
     ],
-    video: "/portfolio/ai-nutrition-parser/video.mp4",
+    video: "/portfolio/ai-nutrition-parser/video.webm",
     architectureImage:
       "/portfolio/ai-nutrition-parser/architecture-diagram.webp",
     mediaFrame: {
@@ -311,7 +311,7 @@ export const projects: Project[] = [
       "/portfolio/pilates-studio/pilates-studio-2.webp",
       "/portfolio/pilates-studio/pilates-studio-3.webp",
     ],
-    video: "/portfolio/pilates-studio/video.mp4",
+    video: "/portfolio/pilates-studio/video.webm",
     slug: {
       pl: "strona-studio-pilates-ospilates",
       en: "pilates-studio-website-ospilates",
