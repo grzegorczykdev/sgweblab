@@ -35,7 +35,7 @@
       width: 100%;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.8125rem;
-      line-height: 1.2;
+      line-height: 1.25;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -45,7 +45,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.375rem;
-      padding: 0.3125rem 1rem;
+      padding: 0.5rem 1rem;
       border-top: 1px solid var(--sgwl-border);
       background: var(--sgwl-bg);
       color: var(--sgwl-fg);
