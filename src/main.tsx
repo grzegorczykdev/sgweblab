@@ -16,9 +16,3 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(<App />);
-
-requestAnimationFrame(() => {
-  requestAnimationFrame(() => {
-    document.documentElement.classList.add("react-ready");
-  });
-});

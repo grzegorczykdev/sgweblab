@@ -1,12 +1,35 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Sparkles, TrendingUp, Bot } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { Button } from "@/components/ui/button";
 
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: easeOut },
+  },
+};
+
+const fadeUpInstant = {
+  hidden: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
+
 const HeroSection = () => {
   const { t } = useLanguage();
   const { scrollToSection } = useScrollToSection();
+  const reduceMotion = useReducedMotion();
+  const item = reduceMotion ? fadeUpInstant : fadeUp;
 
   return (
     <section className="relative min-h-0 flex items-start lg:items-center overflow-hidden pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20">
@@ -21,16 +44,14 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 1, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={stagger}
+            initial="hidden"
+            animate="show"
             className="space-y-8"
           >
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              variants={item}
               className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full"
             >
               <Sparkles className="w-4 h-4 text-accent" />
@@ -41,27 +62,23 @@ const HeroSection = () => {
 
             {/* Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              variants={item}
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight max-w-xl sm:max-w-2xl text-balance"
             >
               {t("hero.headline")}
             </motion.h1>
 
-            {/* Subheadline - LCP element: visible immediately, no opacity fade */}
-            <p
+            <motion.p
               id="hero-lcp-subheadline"
+              variants={item}
               className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
             >
               {t("hero.subheadline")}
-            </p>
+            </motion.p>
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              variants={item}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start"
             >
               <Button
@@ -85,9 +102,7 @@ const HeroSection = () => {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
+              variants={item}
               className="flex flex-wrap gap-4 sm:gap-6 pt-8 border-t border-border/70"
             >
               <div className="glass rounded-2xl px-4 py-3 shadow-sm border border-white/30">
@@ -119,9 +134,9 @@ const HeroSection = () => {
 
           {/* Right Column - Portrait Placeholder */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.28, ease: easeOut }}
             className="relative"
           >
             <div className="relative aspect-[2/1] lg:aspect-[4/5] w-full lg:max-w-md lg:mx-auto overflow-hidden">

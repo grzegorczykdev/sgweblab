@@ -1,4 +1,4 @@
-import { heroTranslationEntries } from "@/lib/heroPrerenderContent";
+import { heroTranslationEntries } from "@/lib/heroCopy";
 import { persistLanguage } from "@/lib/i18n";
 import React, {
   createContext,

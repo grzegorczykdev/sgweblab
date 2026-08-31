@@ -1,7 +1,7 @@
 import type { Language } from "@/types/project";
 
-/** Single source of truth for hero headline/subheadline (React + static prerender). */
-export const HERO_PRERENDER_COPY = {
+/** Single source of truth for hero headline/subheadline. */
+export const HERO_COPY = {
   pl: {
     headline:
       "Nowoczesne strony i aplikacje dla sektora Health & Care. Zbuduj wizerunek, któremu zaufa pacjent i klient.",
@@ -18,11 +18,11 @@ export const HERO_PRERENDER_COPY = {
 
 export const heroTranslationEntries = {
   "hero.headline": {
-    en: HERO_PRERENDER_COPY.en.headline,
-    pl: HERO_PRERENDER_COPY.pl.headline,
+    en: HERO_COPY.en.headline,
+    pl: HERO_COPY.pl.headline,
   },
   "hero.subheadline": {
-    en: HERO_PRERENDER_COPY.en.subheadline,
-    pl: HERO_PRERENDER_COPY.pl.subheadline,
+    en: HERO_COPY.en.subheadline,
+    pl: HERO_COPY.pl.subheadline,
   },
 } as const;
