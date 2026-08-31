@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getHomePath } from "@/lib/i18n";
 import type { Language } from "@/types/project";
 
 const HIGHLIGHT_TERMS: Record<Language, string[]> = {
@@ -73,7 +75,14 @@ const PortfolioIntroSection = () => {
         </div>
 
         <p className="text-sm leading-relaxed text-neutral-600">
-          {t("portfolio.intro.closing")}
+          {t("portfolio.intro.closing.before")}
+          <Link
+            to={`${getHomePath(language)}#contact`}
+            className="font-medium text-primary underline underline-offset-2 transition-colors hover:text-accent"
+          >
+            {t("portfolio.intro.closing.contactLink")}
+          </Link>
+          {t("portfolio.intro.closing.after")}
         </p>
       </div>
     </section>

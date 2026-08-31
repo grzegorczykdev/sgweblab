@@ -44,12 +44,12 @@ export const translations: Translations = {
     pl: "Cześć, jestem Sylwia",
   },
   "portfolio.intro.lead": {
-    en: "I am a tech and software development enthusiast driven by a desire to build solutions that truly matter, solve real needs, and deliver measurable business impact.",
-    pl: "Jestem pasjonatką technologii i software developmentu. Tworzę rozwiązania, które mają prawdziwe znaczenie, są potrzebne i przynoszą mierzalne efekty biznesowe.",
+    en: "I'm a Full-Stack Developer with over 5 years of commercial experience and a background in dietetics. I combine modern technology with a deep understanding of the Health, Care & Wellness industry.",
+    pl: "Jestem Full-Stack Developerem z ponad 5-letnim doświadczeniem komercyjnym oraz wykształceniem w dziedzinie dietetyki. Łączę świat nowoczesnych technologii z głębokim zrozumieniem branży Health, Care & Wellness.",
   },
   "portfolio.intro.bio": {
-    en: "As a Full Stack & AI Engineer with over 5 years of experience, I specialize in architecting resilient enterprise applications and deploying production-ready AI pipelines. I bridge the gap between complex backend systems and cutting-edge LLM capabilities, operating with an AI-First Mindset.",
-    pl: "Jako Full Stack & AI Engineer z ponad 5-letnim doświadczeniem, specjalizuję się w projektowaniu odpornych architektur enterprise oraz wdrażaniu produkcyjnych potoków sztucznej inteligencji. Łączę świat złożonych systemów backendowych z nowoczesnymi możliwościami LLM.",
+    en: "Thanks to this unique combination, I know exactly what solutions and experiences patients and clients need — and as an engineer, I can turn those needs into secure, high-performance, and scalable web systems. Day to day, I build full-stack architecture (Node.js, PHP/Laravel, React), and where it delivers real business value, I enrich projects with automation and practical AI integrations.",
+    pl: "Dzięki tej unikalnej kombinacji doskonale wiem, jakich rozwiązań i doświadczeń potrzebują pacjenci oraz klienci - a jako inżynier potrafię przełożyć te potrzeby na bezpieczne, wydajne i skalowalne systemy webowe. Na co dzień tworzę architekturę full-stack (Node.js, PHP/Laravel, React), a tam, gdzie przynosi to realną wartość biznesową, wzbogacam projekty o automatyzacje i praktyczne integracje z AI.",
   },
   "portfolio.intro.expertiseHeading": {
     en: "Core Expertise",
@@ -87,9 +87,17 @@ export const translations: Translations = {
     en: "Expert in navigating global timezones within distributed teams, relying on high-impact asynchronous communication to keep projects moving forward seamlessly.",
     pl: "Mam doświadczenie w pracy dla międzynarodowych, rozproszonych zespołów. Stawiam na wysoką kulturę komunikacji asynchronicznej.",
   },
-  "portfolio.intro.closing": {
-    en: "Whether you are looking to recruit a specialist for a demanding AI initiative or seeking a technical partner to build a high-performance digital product for your business - take a look at my projects below and let's connect!",
-    pl: "Niezależnie od tego, czy rekrutujesz do wymagającego projektu AI, czy szukasz partnera do zbudowania zaawansowanego produktu technologicznego dla Twojej firmy - zapraszam do zapoznania się z moimi projektami poniżej!",
+  "portfolio.intro.closing.before": {
+    en: "Whether you're looking for an experienced developer to join your team, or a partner to build a dedicated platform or application for the health and beauty sector — ",
+    pl: "Niezależnie od tego, czy szukasz doświadczonej programistki do zespołu, czy partnera do zbudowania dedykowanej platformy lub aplikacji dla sektora zdrowia i urody - ",
+  },
+  "portfolio.intro.closing.contactLink": {
+    en: "feel free to get in touch",
+    pl: "zapraszam do kontaktu",
+  },
+  "portfolio.intro.closing.after": {
+    en: " or explore my projects below!",
+    pl: " lub zapoznania się z moimi projektami poniżej!",
   },
   "portfolio.intro.cta": {
     en: "Explore my work",
