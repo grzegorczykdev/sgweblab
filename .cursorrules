@@ -1,0 +1,148 @@
+# Comprehensive React + Tailwind Engineering Rules: UI/UX, Architecture, SEO, Performance & Security
+
+When creating, refactoring, or styling components and features in this project, strictly adhere to the following rules and constraints.
+
+---
+
+## 1. Spacing, Layout & Whitespace
+
+- **8pt Base Grid:** Strictly use standard Tailwind spacing increments: 4px (`1`), 8px (`2`), 12px (`3`), 16px (`4`), 24px (`6`), 32px (`8`), 48px (`12`), 64px (`16`), 96px (`24`), 128px (`32`). Never use arbitrary pixel values (e.g., `p-[13px]`).
+- **Gestalt Proximity:** Keep related elements tight (`gap-1.5` to `gap-2`). Separate distinct groups by 2–3x that scale (`gap-6` to `gap-8` / `mt-8`).
+- **Intentional Whitespace:** Prioritize spacious layouts. When an element feels cluttered, increase internal container padding instead of shrinking text or adding borders.
+- **Reading Constraints:** Restrict body copy containers to `max-w-prose` (~65–75 characters per line).
+
+---
+
+## 2. Typography, Hierarchy & Font Strategy
+
+- **Font Family Limit:** Maximum 1–2 font families across the entire app (e.g., 1 Primary Sans for UI + optional 1 Editorial Serif/Display for large headings, or 1 Monospace strictly for code/data).
+- **Weight Restraint:** Limit loaded font weights to strictly 3 variants: Regular (400), Medium (500), and SemiBold/Bold (600/700). Never use thin (<300) weights for body copy.
+- **Variable Fonts & Self-hosting:** Prefer variable `.woff2` font formats hosted locally with `font-display: swap` to prevent FOUT/FOIT and eliminate font-related CLS.
+- **Headings (H1–H3):** Apply negative tracking (`tracking-tight` or `tracking-[-0.02em]`), tight leading (`leading-tight`), and enforce `text-balance` to avoid single-word orphans.
+- **Body & Paragraphs:** High legibility with minimum base size `text-base` (16px / 1rem) or `text-sm` for secondary text, `leading-relaxed` (1.5–1.6) to prevent iOS auto-zoom, and `text-pretty`.
+- **Numbers & Metrics:** Always use `tabular-nums` for prices, statistics, timestamps, and counters.
+- **Small Labels & Badges:** Always apply expanded tracking (`tracking-wider` / `tracking-widest` / `uppercase`).
+
+---
+
+## 3. Color, Contrast & WCAG 2.2 Compliance
+
+- **No Harsh Black/White:** Never use pure `#000000` text on `#FFFFFF`. Use deep neutrals: `text-slate-900` / `text-zinc-900` on light surfaces; `text-zinc-100` / `text-slate-100` on dark surfaces.
+- **60-30-10 Rule:** 60% neutral background surfaces, 30% structural & typographic elements, 10% high-intent brand accent/CTA.
+- **Contrast Ratios:** Minimum 4.5:1 for standard text; minimum 3:1 for large text, icons, and active input borders.
+
+---
+
+## 4. Surfaces, Borders & Elevation
+
+- **Hairlines Over Heavy Shadows:** Prefer crisp 1px borders with low alpha (`border-slate-200/80` or `border-zinc-800/80`) over stark drop shadows.
+- **Multi-layered Soft Shadows:** When elevation is required, use diffused, low-opacity ambient shadows (e.g., `shadow-sm` or layered soft shadows).
+- **Glassmorphism:** For sticky headers or modals, use `backdrop-blur-md bg-white/80 dark:bg-zinc-900/80` paired with a subtle hairline border.
+
+---
+
+## 5. Interactions, States & Micro-animations
+
+- **5-State System:** Every interactive element must explicitly handle:
+  1. Default
+  2. Hover (`hover:...`)
+  3. Active / Pressed (`active:scale-[0.98]` or `active:bg-...`)
+  4. Focus-Visible (`focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary`)
+  5. Disabled (`disabled:opacity-50 disabled:pointer-events-none`)
+- **Physics-based Motion:** Keep transitions between 150ms–200ms with natural easing curves (`transition-all duration-150 ease-out`). Avoid linear curves.
+- **Accessibility Motion:** Always respect user settings via `motion-reduce:transition-none` and `motion-reduce:animate-none`.
+
+---
+
+## 6. Forms, Ergonomics & Feedback
+
+- **Semantic HTML & Touch Targets:** Use native `<button>`, `<nav>`, `<header>`, `<main>`, `<article>`, `<section>`, `<aside>`. Never bind click events to generic `<div>` tags. Ensure interactive elements meet the minimum 44×44px touch target (`min-h-[44px] min-w-[44px]`).
+- **Explicit Labels:** Every input must have an accessible `<label>` connected via `htmlFor`/`id`. Do not rely exclusively on placeholders.
+- **Validation & Assistive Tech:** Clearly style validation states (`aria-invalid="true"` with `border-red-500` and associated helper text via `aria-describedby`). Provide proper `autocomplete` and `inputmode` attributes.
+- **Loading & Skeletons:** Match skeleton placeholders to exact layout dimensions during async operations (`animate-pulse bg-slate-200/70 dark:bg-zinc-800/70 rounded-*`).
+
+---
+
+## 7. React Architecture & Code Cleanliness
+
+- **Component Encapsulation & File Sizing:**
+  - One component per file. Strictly limit files to <150 lines. When a component grows beyond this, break it down into subcomponents in a co-located `_components/` folder.
+  - Standard directory hierarchy:
+    - `src/components/ui/` → Primitives / Design System (Button, Input, Modal, Card, Badge).
+    - `src/components/features/` or domain `_components/` → Feature-composed UI blocks.
+    - `src/hooks/` → Reusable custom hooks and side effects.
+    - `src/utils/` → Pure helper functions without JSX.
+    - `src/types/` → Shared TypeScript interfaces and schemas.
+- **Explicit Interfaces & Zero-Any Policy:**
+  - Define an explicit `interface` or `type` for every component's props (extending standard HTML attributes where applicable).
+  - Strictly disallow `any`. Always use explicit types, generics, or `unknown` with type guards.
+- **Separation of Concerns:**
+  - Keep JSX clean and declarative: move complex calculations, formatting, or transformations out of the render body using custom hooks, pure utility functions, `useMemo`, or `useCallback`.
+  - Data fetching and business logic must remain in dedicated hooks or services, decoupled from presentational components.
+
+---
+
+## 8. Tailwind CSS Discipline & Class Ordering
+
+- **Unified Merging Strategy (`cn` utility):**
+  - Always use `clsx` + `tailwind-merge` (via a shared `cn(...)` utility) for dynamic classes and component variants. Never use naive string concatenation or template literals (`className={`... ${prop}`}`).
+- **Variant Management:**
+  - Use `class-variance-authority` (`cva`) for any component supporting multiple variants, sizes, or visual intents.
+- **Standardized Class Ordering:**
+  - Enforce Prettier Tailwind Plugin ordering structure:
+    1. Layout / Box Model (`flex`, `grid`, `block`, `relative`, `z-10`)
+    2. Sizing & Spacing (`w-*`, `h-*`, `m-*`, `p-*`, `gap-*`)
+    3. Typography (`text-*`, `font-*`, `leading-*`, `tracking-*`)
+    4. Backgrounds & Borders (`bg-*`, `border-*`, `rounded-*`)
+    5. Effects & Shadows (`shadow-*`, `opacity-*`, `blur-*`)
+    6. Transitions & Animations (`transition-*`, `duration-*`)
+    7. Modifiers & Pseudo-classes (`hover:`, `focus-visible:`, `disabled:`, `dark:`, `md:`, `lg:`)
+- **No Arbitrary Escape Hatches:**
+  - Never write arbitrary values (e.g., `h-[23px]`, `top-[17px]`). Use theme design tokens, extended config, or CSS custom properties.
+
+---
+
+## 9. SEO & Crawlability Rules
+
+- **Heading Hierarchy:**
+  - Exactly one `<h1>` per page matching the page's core intent.
+  - Strictly nest subheadings (`<h2>` → `<h3>` → `<h4>`); never skip heading levels.
+- **Metadata & Open Graph Standards:**
+  - Every page/route must define a unique `title` (50–60 characters), `description` (140–160 characters), canonical URL, and full Open Graph / Twitter Card tags (`og:title`, `og:description`, `og:image`, `og:type`).
+- **Structured Data (JSON-LD):**
+  - Inject Schema.org JSON-LD scripts on high-value pages (`Organization`, `WebSite`, `Article`, `Product`, `BreadcrumbList`, `FAQPage`).
+- **Search-Friendly Links & Media:**
+  - Use semantic anchor tags (`<a>` or framework Link components) with descriptive anchor text. Never use empty buttons or non-anchor click handlers for navigation.
+  - External links must include `rel="noopener noreferrer"` (and `rel="nofollow"` when applicable).
+  - All images must provide meaningful, descriptive `alt` text. Purely decorative images must use `alt=""` and `aria-hidden="true"`.
+
+---
+
+## 10. Performance & Core Web Vitals (CWV)
+
+- **LCP (Largest Contentful Paint) Optimization:**
+  - Hero images and critical above-the-fold media must use `loading="eager"`, `priority={true}` (or `fetchpriority="high"`), and predefined responsive dimensions.
+  - Below-the-fold images must use native lazy loading (`loading="lazy"`).
+  - Serve modern image formats (`.webp`, `.avif`) with explicit `sizes` attributes.
+- **Zero CLS (Cumulative Layout Shift):**
+  - Always define explicit `width`/`height` or aspect-ratio classes (`aspect-video`, `aspect-square`, `aspect-[4/3]`) on images, videos, maps, and iframes.
+  - Reserve space for dynamic or async injected components with wrapper containers and skeleton loaders.
+- **INP & Bundle Efficiency:**
+  - Code-split heavy, non-critical components (modals, charts, rich text editors) via dynamic imports (`React.lazy` / `next/dynamic`).
+  - Favor native Web/JS APIs (e.g., `Intl`) over heavy third-party utility libraries.
+  - Offload non-urgent state updates using `useTransition` or `useDeferredValue` to maintain responsiveness.
+
+---
+
+## 11. Security & Defensive Coding
+
+- **XSS (Cross-Site Scripting) Defense:**
+  - Strictly avoid `dangerouslySetInnerHTML`. If rendering raw HTML is mandatory, always sanitize with an established sanitizer like `DOMPurify` / `isomorphic-dompurify`.
+  - Validate and sanitize dynamic URLs before binding them to `href` or `src` attributes (blocking `javascript:` or unauthorized `data:` schemes).
+- **Reverse Tabnabbing:**
+  - All anchor tags with `target="_blank"` must strictly include `rel="noopener noreferrer"`.
+- **Schema Validation & Sensitive Data:**
+  - Validate all form submissions and external API payloads with schema validators (`zod` or `valibot`).
+  - Never render or log sensitive user information, tokens, or credentials in client state or URL query parameters.
+- **Environment & Secrets Isolation:**
+  - Never expose private API keys, backend tokens, or internal URLs in client-exposed environment variables (must never use client prefixes like `NEXT_PUBLIC_` or `VITE_` for sensitive secrets).

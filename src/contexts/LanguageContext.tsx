@@ -48,7 +48,7 @@ export const translations: Translations = {
     pl: "Jestem Full-Stack Developerem z ponad 5-letnim doświadczeniem komercyjnym oraz wykształceniem w dziedzinie dietetyki. Łączę świat nowoczesnych technologii z głębokim zrozumieniem branży Health, Care & Wellness.",
   },
   "portfolio.intro.bio": {
-    en: "Thanks to this unique combination, I know exactly what solutions and experiences patients and clients need — and as an engineer, I can turn those needs into secure, high-performance, and scalable web systems. Day to day, I build full-stack architecture (Node.js, PHP/Laravel, React), and where it delivers real business value, I enrich projects with automation and practical AI integrations.",
+    en: "Thanks to this unique combination, I know exactly what solutions and experiences patients and clients need - and as an engineer, I can turn those needs into secure, high-performance, and scalable web systems. Day to day, I build full-stack architecture (Node.js, PHP/Laravel, React), and where it delivers real business value, I enrich projects with automation and practical AI integrations.",
     pl: "Dzięki tej unikalnej kombinacji doskonale wiem, jakich rozwiązań i doświadczeń potrzebują pacjenci oraz klienci - a jako inżynier potrafię przełożyć te potrzeby na bezpieczne, wydajne i skalowalne systemy webowe. Na co dzień tworzę architekturę full-stack (Node.js, PHP/Laravel, React), a tam, gdzie przynosi to realną wartość biznesową, wzbogacam projekty o automatyzacje i praktyczne integracje z AI.",
   },
   "portfolio.intro.expertiseHeading": {
@@ -88,7 +88,7 @@ export const translations: Translations = {
     pl: "Mam doświadczenie w pracy dla międzynarodowych, rozproszonych zespołów. Stawiam na wysoką kulturę komunikacji asynchronicznej.",
   },
   "portfolio.intro.closing.before": {
-    en: "Whether you're looking for an experienced developer to join your team, or a partner to build a dedicated platform or application for the health and beauty sector — ",
+    en: "Whether you're looking for an experienced developer to join your team, or a partner to build a dedicated platform or application for the health and beauty sector - ",
     pl: "Niezależnie od tego, czy szukasz doświadczonej programistki do zespołu, czy partnera do zbudowania dedykowanej platformy lub aplikacji dla sektora zdrowia i urody - ",
   },
   "portfolio.intro.closing.contactLink": {
