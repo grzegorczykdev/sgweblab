@@ -6,30 +6,13 @@ import { Button } from "@/components/ui/button";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: easeOut },
-  },
-};
-
-const fadeUpInstant = {
-  hidden: { opacity: 1, y: 0 },
-  show: { opacity: 1, y: 0 },
-};
-
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
-};
-
 const HeroSection = () => {
   const { t } = useLanguage();
   const { scrollToSection } = useScrollToSection();
   const reduceMotion = useReducedMotion();
-  const item = reduceMotion ? fadeUpInstant : fadeUp;
+  const fadeUp = reduceMotion
+    ? false
+    : { opacity: 0, y: 16 };
 
   return (
     <section className="relative min-h-0 flex items-start lg:items-center overflow-hidden pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20">
@@ -42,43 +25,31 @@ const HeroSection = () => {
 
       <div className="container-hero-mobile relative z-10">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 lg:gap-16 items-center">
-          {/* Left Column - Content */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="show"
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             {/* Badge */}
-            <motion.div
-              variants={item}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full">
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-foreground">
                 {t("hero.badge")}
               </span>
-            </motion.div>
+            </div>
 
-            {/* Headline */}
-            <motion.h1
-              variants={item}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight max-w-xl sm:max-w-2xl text-balance"
-            >
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight max-w-xl sm:max-w-2xl text-balance">
               {t("hero.headline")}
-            </motion.h1>
+            </h1>
 
-            <motion.p
+            <p
               id="hero-lcp-subheadline"
-              variants={item}
               className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
             >
               {t("hero.subheadline")}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
             <motion.div
-              variants={item}
+              initial={fadeUp}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.12, ease: easeOut }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start"
             >
               <Button
@@ -102,7 +73,9 @@ const HeroSection = () => {
 
             {/* Stats */}
             <motion.div
-              variants={item}
+              initial={fadeUp}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.22, ease: easeOut }}
               className="flex flex-wrap gap-4 sm:gap-6 pt-8 border-t border-border/70"
             >
               <div className="glass rounded-2xl px-4 py-3 shadow-sm border border-white/30">
@@ -130,13 +103,13 @@ const HeroSection = () => {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Right Column - Portrait Placeholder */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={fadeUp}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.28, ease: easeOut }}
+            transition={{ duration: 0.6, delay: 0.18, ease: easeOut }}
             className="relative"
           >
             <div className="relative aspect-[2/1] lg:aspect-[4/5] w-full lg:max-w-md lg:mx-auto overflow-hidden">
