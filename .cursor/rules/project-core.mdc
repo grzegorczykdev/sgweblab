@@ -1,0 +1,22 @@
+---
+description: Core project context and non-negotiable standards for sgweblab
+alwaysApply: true
+---
+
+# sgweblab — core
+
+Marketing / portfolio site for SG Web Lab.
+
+**Stack:** Vite, React 18, TypeScript, React Router, Tailwind, shadcn/Radix, Framer Motion, Zod, react-helmet-async. Path alias `@/`.
+
+**Locales:** `pl` | `en`. Copy lives in `LanguageContext`; routing/helpers in `src/lib/i18n.ts` and `LangLayout`. Prefer existing patterns over new i18n libs.
+
+**Preserve** established layout, tokens, and component patterns unless the task is a redesign.
+
+## Non-negotiables
+
+- No `any`. Explicit props types; prefer `unknown` + guards when needed.
+- Semantic HTML: never attach click handlers to bare `<div>` for actions/navigation.
+- Secrets never in client env (`VITE_*`). No tokens/PII in URLs or client logs.
+- Match nearby code style; minimal diffs; no drive-by refactors.
+- Do not add `useMemo` / `useCallback` by default.

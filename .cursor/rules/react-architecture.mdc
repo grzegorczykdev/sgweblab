@@ -1,0 +1,26 @@
+---
+description: Use when creating or refactoring React components, TypeScript types, hooks, forms, or file/folder structure under src/.
+alwaysApply: false
+---
+
+# React & TypeScript
+
+## Structure
+
+- `src/components/ui/` — primitives (Button, Input, Dialog…).
+- `src/components/` / `portfolio/` — feature UI; `src/pages/` — routes; `src/hooks/`, `src/lib/`, `src/types/`, `src/data/`.
+- One main export per file. Split when a file gains a second responsibility (prefer clarity over a hard line count).
+- Co-locate small private pieces next to the feature rather than premature globals.
+
+## Components
+
+- Typed props (`interface` / `type`); extend native element props when wrapping HTML.
+- Keep JSX declarative: heavy formatting/logic → helpers or hooks in `src/lib` / `src/hooks`.
+- Data/business logic out of pure presentational leaves when it clarifies testing and reuse.
+
+## Forms & a11y
+
+- Real `<label htmlFor>`; never placeholder-only labels.
+- Invalid: `aria-invalid` + `aria-describedby` helper text; set `autocomplete` / `inputmode` where useful.
+- Validate submits with Zod when adding or changing forms.
+- Loading: skeletons that match final layout size (`animate-pulse` + muted bg).

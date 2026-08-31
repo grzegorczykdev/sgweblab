@@ -1,0 +1,38 @@
+---
+description: Use when building or restyling UI — layout, spacing, typography, colors, Tailwind classes, hover/focus states, buttons, cards, or visual design.
+alwaysApply: false
+---
+
+# UI & Tailwind
+
+## Spacing & layout
+
+- Use Tailwind scale (`1`–`32`); prefer theme tokens over arbitrary px.
+- Related items: tight gap (`gap-1.5`–`gap-2`). Distinct groups: ~2–3× (`gap-6`–`gap-8`).
+- Prefer more padding over shrinking type or adding boxes. Body copy: `max-w-prose`.
+
+## Typography
+
+- Fonts already in project (Space Grotesk + Inter) — do not add families.
+- Weights: 400 / 500 / 600|700 only. Headings: `tracking-tight`, `leading-tight`, `text-balance`.
+- Body: ≥ `text-base` (or `text-sm` secondary), `leading-relaxed`, `text-pretty`.
+- Metrics: `tabular-nums`. Labels/badges: wider tracking / uppercase when fitting design.
+
+## Color & surfaces
+
+- Avoid pure `#000` on `#FFF`; use zinc/slate neutrals or theme CSS vars (`foreground`, `muted`, etc.).
+- Prefer 1px low-alpha borders over heavy shadows; soft `shadow-sm` when elevation is needed.
+- Sticky/overlays may use `backdrop-blur` + translucent theme background + hairline border.
+- **Cards:** keep existing card/shadcn usage; do not invent new card chrome for static marketing blocks unless interaction needs a container.
+
+## Interactions
+
+Every control: default, `hover`, `active`, `focus-visible` (ring + offset), `disabled`.
+Transitions ~150–200ms `ease-out`; always pair with `motion-reduce:transition-none` / `animate-none`.
+Touch targets ≥ 44×44 (`min-h-11` / `min-w-11` or equivalent).
+
+## Tailwind discipline
+
+- Dynamic classes via `cn()` from `@/lib/utils` — never string concat.
+- Multi-variant UI primitives: `cva`. Prefer theme tokens; allowed arbitrary escapes: touch targets, fine tracking, aspect ratios.
+- Order roughly: layout → size/space → type → color/border → effects → motion → modifiers.

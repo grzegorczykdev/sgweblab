@@ -1,0 +1,12 @@
+---
+description: Use when adding or changing Polish/English copy, translations, LanguageContext, locale routing, hreflang, or language toggle.
+alwaysApply: false
+---
+
+# i18n (pl / en)
+
+- Supported languages: `pl`, `en` (`Language` in `@/types/project`). Default preference chain: stored → browser → `pl` (`detectPreferredLanguage`).
+- UI strings: extend `LanguageContext` dictionaries; keep `pl` and `en` keys in sync.
+- Routing: respect `LangLayout` / localized paths; use helpers from `src/lib/i18n.ts` (`isLanguage`, storage keys, etc.).
+- SEO strings for routes belong in `src/lib/seo.ts`, not only in React context.
+- Do not introduce a second i18n framework unless explicitly requested.

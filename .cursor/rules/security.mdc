@@ -1,0 +1,13 @@
+---
+description: Use when handling user input, forms, HTML, links, URLs, env vars, API payloads, or anything that could leak secrets or enable XSS.
+alwaysApply: false
+---
+
+# Security
+
+- Avoid `dangerouslySetInnerHTML`. If HTML is required, sanitize (e.g. DOMPurify) first.
+- Sanitize dynamic `href` / `src` (block `javascript:` and untrusted `data:`).
+- `target="_blank"` requires `rel="noopener noreferrer"`.
+- Validate forms and external payloads with Zod (`zod` is already a dependency).
+- Never put secrets, tokens, or sensitive PII in client state, logs, or query strings.
+- No private keys or backend URLs in `VITE_*` env vars.

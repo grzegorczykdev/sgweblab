@@ -1,0 +1,21 @@
+---
+description: Use when changing pages, routes, metadata, titles, Open Graph, headings, images, lazy loading, or Core Web Vitals / performance.
+alwaysApply: false
+---
+
+# SEO & performance
+
+## SEO
+
+- Route SEO via `src/lib/seo.ts` + `SeoManager` (Helmet). New routes: unique title (~50–60), description (~140–160), canonical, OG/Twitter, hreflang alternates.
+- One `<h1>` per page; nest headings without skipping levels.
+- Navigation with `<Link>` / `<a>` and descriptive text — not button-as-link for internal routes.
+- `target="_blank"` → `rel="noopener noreferrer"`. Images: meaningful `alt`; decorative → `alt=""` + `aria-hidden`.
+- High-value pages may add JSON-LD (`Organization`, `WebSite`, `BreadcrumbList`, etc.) when relevant.
+
+## Performance (CWV)
+
+- LCP/hero media: eager / high fetch priority, real dimensions, modern formats (webp/avif) + `sizes`.
+- Below-fold: `loading="lazy"`. Reserve space (`width`/`height` or `aspect-*`) to avoid CLS.
+- Code-split heavy non-critical UI (`React.lazy`). Prefer platform APIs (`Intl`) over new utility deps.
+- Non-urgent updates: `useTransition` / `useDeferredValue` when they clearly help INP.
